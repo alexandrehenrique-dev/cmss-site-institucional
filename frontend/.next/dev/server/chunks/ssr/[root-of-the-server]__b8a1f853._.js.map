@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/alexandresilva/git/site-cmss/frontend/src/app/help/page.tsx"],"sourcesContent":["export default function HelpPage() {\n  return (\n    <section className=\"flex min-h-screen items-center justify-center\">\n      <h1 className=\"text-2xl font-semibold\">\n        Página de ajuda – em construção 🚧\n      </h1>\n    </section>\n  );\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAQ,WAAU;kBACjB,cAAA,8OAAC;YAAG,WAAU;sBAAyB;;;;;;;;;;;AAK7C"}}]
+}
