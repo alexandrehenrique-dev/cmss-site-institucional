@@ -71,6 +71,9 @@ Mais detalhes técnicos e operacionais estão disponíveis em:
 - ⚙️ **Configuração do Ambiente (Node, npm, npx)**  
   `docs/environment.md`
 
+- 📋 **Veja documentação do trello para regras de gestão do projeto**
+  `docs/kanban-trello.md`
+
 Esses documentos explicam:
 - Padrão de branches e Pull Requests
 - Políticas de proteção de branch
