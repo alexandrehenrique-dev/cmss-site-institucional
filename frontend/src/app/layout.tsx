@@ -1,4 +1,5 @@
 import "./globals.css";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -7,8 +8,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-white text-gray-900 antialiased">
-        <main className="min-h-screen">{children}</main>
+      <body>
+        <header className="p-4 border-b">
+          <nav className="max-w-5xl mx-auto flex gap-4">
+            <Link href="/">Home</Link>
+            <Link href="/example">Exemplo</Link>
+          </nav>
+        </header>
+
+        <main>{children}</main>
       </body>
     </html>
   );

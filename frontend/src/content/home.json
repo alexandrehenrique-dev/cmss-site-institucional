@@ -1,5 +1,11 @@
 {
-  "title": "Corporação Musical São Sebastião",
-  "subtitle": "Tradição, cultura e resistência desde 1951",
-  "message": "Este é o primeiro Hello World vindo de um JSON."
+  "hero": {
+    "title": "Corporação Musical São Sebastião",
+    "subtitle": "Tradição, cultura e música desde 1951",
+    "image": "/images/example.jpg"
+  },
+  "section": {
+    "title": "Bem-vindo",
+    "text": "Este é um exemplo de página Home renderizada a partir de JSON."
+  }
 }
