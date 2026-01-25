@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Contato",
+    "subtitle": "Fale com a gente",
+    "image": "/images/example.png"
+  },
+  "sections": [
+    {
+      "title": "Informações",
+      "items": [
+        "Endereço: Macuco de Minas",
+        "Telefone: (00) 00000-0000",
+        "Email: contato@cmss.org"
+      ]
+    }
+  ]
+}

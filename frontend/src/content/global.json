@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "title": "Corporação Musical São Sebastião",
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Quem Somos", "href": "/quem-somos" },
+      { "label": "História", "href": "/historia" },
+      { "label": "Agenda", "href": "/agenda" },
+      { "label": "Apoie", "href": "/apoie" },
+      { "label": "Contato", "href": "/contato" }
+    ]
+  },
+  "footer": {
+    "text": "© Corporação Musical São Sebastião"
+  }
+}
