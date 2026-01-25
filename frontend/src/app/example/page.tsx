@@ -1,9 +1,9 @@
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
-import { getHomeContent } from "@/services/contentService";
+import { getExampleContent } from "@/services/contentService";
 
-export default function HomePage() {
-  const content = getHomeContent();
+export default function ExamplePage() {
+  const content = getExampleContent();
 
   return (
     <>

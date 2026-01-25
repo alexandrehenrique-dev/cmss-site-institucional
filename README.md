@@ -35,12 +35,17 @@ O backend **ainda não está definido** e está fora do escopo do MVP atual.
 
 ```text
 /
-├── prototipo/        # Protótipos visuais (UI/UX)
-├── docs/             # Documentação do projeto
-│   ├── git-flow.md
-│   └── environment.md
-├── frontend/         # Frontend (Next.js + Tailwind CSS)
-└── backend/          # Planejado para o futuro
+├── docs/
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── app/
+│       │   └── help/
+│       ├── components/
+│       ├── content/
+│       ├── lib/
+│       └── services/
+└── prototipo/
 ```
 
 ---
@@ -71,7 +76,7 @@ Mais detalhes técnicos e operacionais estão disponíveis em:
 - ⚙️ **Configuração do Ambiente (Node, npm, npx)**  
   `docs/environment.md`
 
-- 📋 **Veja documentação do trello para regras de gestão do projeto**
+- 📋 **Veja documentação do trello para regras de gestão do projeto**  
   `docs/kanban-trello.md`
 
 Esses documentos explicam:
