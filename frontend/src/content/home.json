@@ -1,11 +1,20 @@
 {
   "hero": {
     "title": "Corporação Musical São Sebastião",
-    "subtitle": "Tradição, cultura e música desde 1951",
-    "image": "/images/example.jpg"
+    "subtitle": "Desde 1951 mantendo a tradição",
+    "image": "/images/example.png"
   },
-  "section": {
-    "title": "Bem-vindo",
-    "text": "Este é um exemplo de página Home renderizada a partir de JSON."
-  }
+  "sections": [
+    {
+      "title": "Próximos Eventos",
+      "items": [
+        "Encontro de Bandas - Março 2025",
+        "Concerto Especial - Abril 2025"
+      ]
+    },
+    {
+      "title": "Quem Somos",
+      "text": "Uma banda, uma escola e um símbolo cultural."
+    }
+  ]
 }

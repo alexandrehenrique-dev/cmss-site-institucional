@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Agenda",
+    "subtitle": "Acompanhe nossos eventos",
+    "image": "/images/example.png"
+  },
+  "sections": [
+    {
+      "title": "Eventos",
+      "items": [
+        "Concerto de Natal",
+        "Festival Regional",
+        "Apresentação Comunitária"
+      ]
+    }
+  ]
+}

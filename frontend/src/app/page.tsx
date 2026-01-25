@@ -1,14 +1,5 @@
-import { Hero } from "@/components/Hero";
-import { Section } from "@/components/Section";
-import { getHomeContent } from "@/services/contentService";
+import { RenderPage } from '@/components/RenderPage';
 
 export default function HomePage() {
-  const content = getHomeContent();
-
-  return (
-    <>
-      <Hero {...content.hero} />
-      <Section {...content.section} />
-    </>
-  );
+  return <RenderPage page="home" />;
 }

@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Apoie a Banda",
+    "subtitle": "Ajude a manter a tradição viva",
+    "image": "/images/example.png"
+  },
+  "sections": [
+    {
+      "title": "Como Ajudar",
+      "items": [
+        "Apoio financeiro",
+        "Doação de instrumentos",
+        "Parcerias institucionais"
+      ]
+    }
+  ]
+}

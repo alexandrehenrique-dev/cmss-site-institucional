@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "História",
+    "subtitle": "Mais de 70 anos de música",
+    "image": "/images/example.png"
+  },
+  "sections": [
+    {
+      "title": "Linha do Tempo",
+      "items": [
+        "1951 - Fundação",
+        "2000 - Expansão",
+        "2020 - Reconhecimento"
+      ]
+    }
+  ]
+}

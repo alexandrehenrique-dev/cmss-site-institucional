@@ -37,14 +37,21 @@ O backend **ainda não está definido** e está fora do escopo do MVP atual.
 /
 ├── docs/
 ├── frontend/
+│   ├── node_modules/
 │   ├── public/
+│   │   └── images/
 │   └── src/
 │       ├── app/
-│       │   └── help/
+│       │   ├── agenda/
+│       │   ├── apoie/
+│       │   ├── contato/
+│       │   ├── historia/
+│       │   └── quem-somos/
 │       ├── components/
 │       ├── content/
 │       ├── lib/
-│       └── services/
+│       ├── services/
+│       └── types/
 └── prototipo/
 ```
 

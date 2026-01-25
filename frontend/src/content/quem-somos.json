@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "title": "Quem Somos",
+    "subtitle": "Tradição, cultura e formação musical",
+    "image": "/images/example.png"
+  },
+  "sections": [
+    {
+      "title": "Nossa História",
+      "text": "Lorem ipsum dolor sit amet..."
+    },
+    {
+      "title": "Missão, Visão e Valores",
+      "items": [
+        "Missão: formar músicos",
+        "Visão: preservar a cultura",
+        "Valores: tradição, respeito, educação"
+      ]
+    }
+  ]
+}
