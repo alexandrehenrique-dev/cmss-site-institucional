@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: var(--leading-normal);
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Texto básico */
+p {
+  margin: 0.75rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
