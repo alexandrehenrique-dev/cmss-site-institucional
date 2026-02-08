@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { getGlobalContent } from '@/services/contentService';
+import './globals.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const global = getGlobalContent();
