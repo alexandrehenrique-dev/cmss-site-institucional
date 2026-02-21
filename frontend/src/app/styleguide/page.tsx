@@ -1,3 +1,5 @@
+import { CmsImage } from "@/components/CmsImage";
+
 export default function StyleguidePage() {
   return (
     <main>
@@ -53,7 +55,12 @@ export default function StyleguidePage() {
       <section>
         <h2>Imagem responsiva</h2>
         <p>Essa imagem deve respeitar telas pequenas (max-width: 100%).</p>
-        <img src="/images/example.jpg" alt="Exemplo" />
+        <CmsImage 
+          src="/images/example.png"
+          alt="Descrição"
+          width={1200}
+          height={800}
+        />
       </section>
     </main>
   );

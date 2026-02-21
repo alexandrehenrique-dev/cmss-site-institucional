@@ -2,7 +2,12 @@
   "hero": {
     "title": "História",
     "subtitle": "Mais de 70 anos de música",
-    "image": "/images/example.jpg"
+    "image": {
+      "src": "/images/example.jpg",
+      "alt": "Descrição",
+      "width": 1200,
+      "height": 800
+    }
   },
   "sections": [
     {

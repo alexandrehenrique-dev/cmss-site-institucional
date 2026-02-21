@@ -2,7 +2,12 @@
   "hero": {
     "title": "Apoie a Banda",
     "subtitle": "Ajude a manter a tradição viva",
-    "image": "/images/example.jpg"
+    "image": {
+      "src": "/images/example.jpg",
+      "alt": "Descrição",
+      "width": 1200,
+      "height": 800
+    }
   },
   "sections": [
     {

@@ -1,3 +1,10 @@
+export type Image = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export type NavLink = {
   label: string;
   href: string;
@@ -20,7 +27,7 @@ export type GlobalContent = {
 export type Hero = {
   title: string;
   subtitle: string;
-  image: string;
+  image: Image;
 };
 
 export type Section = {
