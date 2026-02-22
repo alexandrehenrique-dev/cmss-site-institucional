@@ -6,6 +6,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { CmsImage } from "@/components/CmsImage";
 import { TextBlock } from "@/components/TextBlock";
 import { ImageBlock } from "@/components/ImageBlock";
+import { Hero } from "@/components/Hero";
 
 import {
   Mail,
@@ -19,6 +20,67 @@ import {
 export default function StyleguidePage() {
   return (
     <main className="flex flex-col gap-16 py-12">
+
+      {/* Hero */}
+      <section className="mt-16 flex flex-col gap-12">
+        {/* 1) padrão (dim só) */}
+        <Hero
+          content={{
+            title: "Hero padrão (dim)",
+            subtitle: "Sem gradiente, sem blur. Só escurece a imagem.",
+            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
+            overlay: { dim: 0.45 },
+            cta: { label: "Apoie", href: "/apoie" },
+          }}
+        />
+
+        {/* 2) gradiente vermelho -> transparente */}
+        <Hero
+          content={{
+            title: "Gradiente (primary → transparente)",
+            subtitle: "Estilo protótipo: identidade forte, texto legível.",
+            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
+            overlay: {
+              dim: 0.35,
+              gradient: {
+                type: "linear",
+                direction: "to-r",
+                from: "var(--primary)",
+                via: "transparent",
+                to: "transparent",
+                fromOpacity: 0.75,
+                viaOpacity: 0,
+                toOpacity: 0,
+              },
+            },
+            cta: { label: "Ver História", href: "/historia", variant: "secondary" },
+          }}
+        />
+
+        {/* 3) gradiente + blur */}
+        <Hero
+          content={{
+            title: "Gradiente + blur",
+            subtitle: "Blur controlado por parâmetro, sem gambiarra.",
+            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
+            overlay: {
+              dim: 0.25,
+              blur: 6,
+              gradient: {
+                type: "linear",
+                direction: "to-b",
+                from: "var(--primary)",
+                via: "transparent",
+                to: "transparent",
+                fromOpacity: 0.55,
+                viaOpacity: 0,
+                toOpacity: 0,
+              },
+            },
+            cta: { label: "Agenda", href: "/agenda" },
+          }}
+        />
+      </section>
 
       {/* TÍTULO PRINCIPAL */}
       <Section>
