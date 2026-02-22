@@ -3,6 +3,7 @@
 import { CmsImage } from "@/components/CmsImage";
 import { Mail, Phone, MapPin, Calendar, HeartHandshake, Music } from "lucide-react";
 import { CTAButton } from "@/components/CTAButton";
+import { Heading, Text } from "@/components/Typography";
 
 export default function StyleguidePage() {
   return (
@@ -144,6 +145,22 @@ export default function StyleguidePage() {
             href="/apoie"
           />
         </div>
+      </section>
+      <section>
+        <Heading variant="h1">H1 — Playfair Display</Heading>
+        <Text>
+          Body — Inter. Texto padrão do sistema. Mobile first, leitura confortável.
+        </Text>
+
+        <Heading variant="h2">H2 — Seção</Heading>
+        <Text variant="muted">
+          Texto muted com leve opacidade.
+        </Text>
+
+        <Heading variant="h3">H3 — Subtítulo</Heading>
+        <Text variant="small">
+          Texto pequeno para metadados.
+        </Text>
       </section>
     </main>
   );
