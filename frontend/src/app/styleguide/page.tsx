@@ -4,6 +4,7 @@ import { Section } from "@/components/Section";
 import { Heading, Text } from "@/components/Typography";
 import { CTAButton } from "@/components/CTAButton";
 import { CmsImage } from "@/components/CmsImage";
+import { TextBlock } from "@/components/TextBlock";
 
 import {
   Mail,
@@ -115,6 +116,43 @@ export default function StyleguidePage() {
           <IconItem icon={<Calendar size={20} />} label="Agenda" />
           <IconItem icon={<HeartHandshake size={20} />} label="Apoie" />
           <IconItem icon={<Music size={20} />} label="Música" />
+        </div>
+      </Section>
+
+      {/* TextBlock */}
+      <Section title="TextBlock">
+        <div className="flex flex-col gap-8 max-w-prose">
+          <TextBlock
+            title="Bloco simples"
+            text="Este é um TextBlock renderizando título e parágrafo usando Typography."
+          />
+
+          <TextBlock
+            title="Bloco com lista"
+            text="Agora com uma lista de itens:"
+            items={[
+              "Item 1: texto curto",
+              "Item 2: texto maior para testar quebra de linha no mobile sem estourar nada",
+              "Item 3: mais um item",
+            ]}
+          />
+
+          <TextBlock
+            text="Bloco sem título (somente texto)."
+          />
+
+          <TextBlock
+            title="Somente lista"
+            items={[
+              "Bullet 1",
+              "Bullet 2",
+            ]}
+          />
+
+          <TextBlock
+            title="Vazio não deve aparecer"
+            items={[]}
+          />
         </div>
       </Section>
 
