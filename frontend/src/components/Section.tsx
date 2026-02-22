@@ -1,13 +1,35 @@
-type SectionProps = {
-  title: string;
-  text: string;
+import { ElementType, ReactNode } from "react";
+import { Heading } from "@/components/Typography";
+import { Container } from "@/components/Container";
+
+type SectionProps<T extends ElementType> = {
+  title?: string;
+  as?: T;
+  children: ReactNode;
+  className?: string;
 };
 
-export function Section({ title, text }: SectionProps) {
+export function Section<T extends ElementType = "section">({
+  title,
+  as,
+  children,
+  className = "",
+}: SectionProps<T>) {
+  const Component = (as ?? "section") as ElementType;
+
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-      <p className="text-lg leading-relaxed">{text}</p>
-    </section>
+    <Component className={`py-12 md:py-16 ${className}`}>
+      <Container>
+        <div className="flex flex-col gap-6">
+          {title && (
+            <Heading variant="h2">
+              {title}
+            </Heading>
+          )}
+
+          {children}
+        </div>
+      </Container>
+    </Component>
   );
 }
