@@ -5,16 +5,20 @@ type CmsImageProps = {
   alt: string;
   width: number;
   height: number;
+  className?: string;
 };
 
-export function CmsImage({ src, alt, width, height }: CmsImageProps) {
+export function CmsImage({ src, alt, width, height, className }: CmsImageProps) {
   return (
     <Image
       src={src}
       alt={alt}
       width={width}
       height={height}
-      className="w-full h-auto"
+      className={[
+        "w-full h-auto",
+        className,
+      ].join(" ")}
     />
   );
 }
