@@ -34,3 +34,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
+
+/* Dialog modal */
+dialog {
+  border: none;
+  padding: 0;
+}
+
+/* Backdrop do <dialog> (garante que pega mesmo com Tailwind/ordem de imports) */
+dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}

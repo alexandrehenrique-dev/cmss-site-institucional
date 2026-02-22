@@ -5,6 +5,7 @@ import { Heading, Text } from "@/components/Typography";
 import { CTAButton } from "@/components/CTAButton";
 import { CmsImage } from "@/components/CmsImage";
 import { TextBlock } from "@/components/TextBlock";
+import { ImageBlock } from "@/components/ImageBlock";
 
 import {
   Mail,
@@ -153,6 +154,43 @@ export default function StyleguidePage() {
             title="Vazio não deve aparecer"
             items={[]}
           />
+        </div>
+      </Section>
+
+      {/* ImageBlock */}
+      <Section title="ImageBlock">
+        <div className="flex flex-col gap-10 max-w-xl">
+
+          <ImageBlock
+            image={{
+              src: "/images/example.jpg",
+              alt: "Imagem de exemplo",
+              width: 1200,
+              height: 800,
+            }}
+          />
+
+          <ImageBlock
+            image={{
+              src: "/images/example.jpg",
+              alt: "Imagem com legenda",
+              width: 1200,
+              height: 800,
+            }}
+            caption="Legenda da imagem"
+          />
+
+          <ImageBlock
+            image={{
+              src: "/images/example.jpg",
+              alt: "Imagem completa",
+              width: 1200,
+              height: 800,
+            }}
+            caption="Legenda estilizada"
+            text="Texto complementar explicando o contexto da imagem."
+          />
+
         </div>
       </Section>
 
