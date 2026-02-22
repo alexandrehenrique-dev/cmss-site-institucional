@@ -1,5 +1,8 @@
+"use client";
+
 import { CmsImage } from "@/components/CmsImage";
 import { Mail, Phone, MapPin, Calendar, HeartHandshake, Music } from "lucide-react";
+import { CTAButton } from "@/components/CTAButton";
 
 export default function StyleguidePage() {
   return (
@@ -114,6 +117,33 @@ export default function StyleguidePage() {
         <p>
           Texto menor / detalhes.
         </p>
+      </section>
+      <section>
+        <h2>CTAButton</h2>
+        <p>Variantes, estados e teste de quebra de linha.</p>
+
+        <div className="flex flex-col gap-3 max-w-sm">
+          <CTAButton label="Primário (Link)" href="/quem-somos" />
+
+          <CTAButton
+            label="Primário (Ação)"
+            onClick={() => console.log("CTAButton: clique primário")}
+          />
+
+          <CTAButton label="Secundário" variant="secondary" href="/historia" />
+
+          <CTAButton label="Ghost" variant="ghost" href="/agenda" />
+
+          <CTAButton label="Disabled (Link)" href="/contato" disabled />
+
+          <CTAButton label="Disabled (Button)" disabled />
+
+          <CTAButton
+            label="Texto bem grande pra testar quebra de linha no mobile first sem estourar layout nenhum"
+            variant="secondary"
+            href="/apoie"
+          />
+        </div>
       </section>
     </main>
   );
