@@ -1,167 +1,138 @@
 "use client";
 
-import { CmsImage } from "@/components/CmsImage";
-import { Mail, Phone, MapPin, Calendar, HeartHandshake, Music } from "lucide-react";
-import { CTAButton } from "@/components/CTAButton";
+import { Section } from "@/components/Section";
 import { Heading, Text } from "@/components/Typography";
+import { CTAButton } from "@/components/CTAButton";
+import { CmsImage } from "@/components/CmsImage";
+
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  HeartHandshake,
+  Music,
+} from "lucide-react";
 
 export default function StyleguidePage() {
   return (
-    <main>
-      <h1>Styleguide CMSS</h1>
-      <p>Esta página existe para testar tipografia, cores, superfícies e elementos básicos.</p>
+    <main className="flex flex-col gap-16 py-12">
 
-      <section>
-        <h2>Tipografia</h2>
-        <p style={{ fontSize: 'var(--text-xs)' }}>Texto XS (var(--text-xs))</p>
-        <p style={{ fontSize: 'var(--text-sm)' }}>Texto SM (var(--text-sm))</p>
-        <p style={{ fontSize: 'var(--text-md)' }}>Texto MD (var(--text-md))</p>
-        <p style={{ fontSize: 'var(--text-lg)' }}>Texto LG (var(--text-lg))</p>
-        <p style={{ fontSize: 'var(--text-xl)' }}>Texto XL (var(--text-xl))</p>
-        <p style={{ fontSize: 'var(--text-2xl)' }}>Texto 2XL (var(--text-2xl))</p>
-        <p style={{ fontSize: 'var(--text-3xl)' }}>Texto 3XL (var(--text-3xl))</p>
-      </section>
+      {/* TÍTULO PRINCIPAL */}
+      <Section>
+        <Heading variant="h1">Styleguide CMSS</Heading>
+        <Text>
+          Página para validar tipografia, cores, componentes e comportamento responsivo.
+        </Text>
+      </Section>
 
-      <section>
-        <h2>Cores</h2>
+      {/* TIPOGRAFIA */}
+      <Section title="Tipografia">
+        <div className="flex flex-col gap-6">
+          <Heading variant="h1">H1 — Playfair Display</Heading>
+          <Heading variant="h2">H2 — Seção</Heading>
+          <Heading variant="h3">H3 — Subtítulo</Heading>
 
-        <p><strong>BG:</strong> var(--bg) | <strong>FG:</strong> var(--fg)</p>
-        <p><strong>Primary:</strong> var(--primary) | <strong>Accent:</strong> var(--accent)</p>
+          <Text>Texto padrão — Inter.</Text>
+          <Text variant="muted">Texto muted.</Text>
+          <Text variant="small">Texto pequeno (metadado).</Text>
+        </div>
+      </Section>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-          <div style={{ padding: 12, background: 'var(--surface-1)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
-            surface-1
+      {/* CORES / SUPERFÍCIES */}
+      <Section title="Superfícies">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="p-4 rounded-md border bg-[var(--surface-1)]">
+            <Text>surface-1</Text>
           </div>
-          <div style={{ padding: 12, background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
-            surface-2
+
+          <div className="p-4 rounded-md border bg-[var(--surface-2)]">
+            <Text>surface-2</Text>
           </div>
-          <div style={{ padding: 12, background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
-            surface-3
+
+          <div className="p-4 rounded-md border bg-[var(--surface-3)]">
+            <Text>surface-3</Text>
           </div>
-          <div style={{ padding: 12, background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
-            bg
+
+          <div className="p-4 rounded-md border bg-[var(--bg)]">
+            <Text>bg</Text>
           </div>
         </div>
+      </Section>
 
-        <div style={{ marginTop: 16 }}>
-          <a href="#">Link de exemplo</a>
-        </div>
-
-        <div style={{ marginTop: 16, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <button style={{ padding: '10px 12px', background: 'var(--primary)', color: 'white', border: 0, borderRadius: 'var(--radius-sm)' }}>
-            Botão Primário
-          </button>
-          <button style={{ padding: '10px 12px', background: 'var(--surface-2)', color: 'var(--fg)', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)' }}>
-            Botão Neutro
-          </button>
-        </div>
-      </section>
-
-      <section>
-        <h2>Imagem responsiva</h2>
-        <p>Essa imagem deve respeitar telas pequenas (max-width: 100%).</p>
-        <CmsImage 
-          src="/images/example.jpg"
-          alt="Descrição"
-          width={1200}
-          height={800}
-        />
-      </section>
-      <h1>Styleguide CMSS</h1>
-      <p>Testes de tipografia e ícones (Lucide).</p>
-
-      <section>
-        <h2>Ícones</h2>
-        <p>Exemplos básicos:</p>
-
-        <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <Mail size={20} /> Email
-          </span>
-
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <Phone size={20} /> Telefone
-          </span>
-
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <MapPin size={20} /> Endereço
-          </span>
-
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <Calendar size={20} /> Agenda
-          </span>
-
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <HeartHandshake size={20} /> Apoie
-          </span>
-
-          <span style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-            <Music size={20} /> Música
-          </span>
-        </div>
-      </section>
-      <section>
-        <h2>Tipografia</h2>
-
-        <h1>H1 — Playfair Display</h1>
-        <p>
-          Parágrafo — Inter. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Mobile first: legibilidade e respiro.
-        </p>
-
-        <h2>H2 — Seção</h2>
-        <p>
-          Texto normal. Teste de contraste e leitura em dark/light.
-        </p>
-
-        <h3>H3 — Sub-seção</h3>
-        <p>
-          Texto menor / detalhes.
-        </p>
-      </section>
-      <section>
-        <h2>CTAButton</h2>
-        <p>Variantes, estados e teste de quebra de linha.</p>
-
-        <div className="flex flex-col gap-3 max-w-sm">
+      {/* BOTÕES */}
+      <Section title="CTAButton">
+        <div className="flex flex-col gap-4 max-w-sm">
           <CTAButton label="Primário (Link)" href="/quem-somos" />
 
           <CTAButton
             label="Primário (Ação)"
-            onClick={() => console.log("CTAButton: clique primário")}
+            onClick={() => console.log("Clique primário")}
           />
 
-          <CTAButton label="Secundário" variant="secondary" href="/historia" />
-
-          <CTAButton label="Ghost" variant="ghost" href="/agenda" />
-
-          <CTAButton label="Disabled (Link)" href="/contato" disabled />
-
-          <CTAButton label="Disabled (Button)" disabled />
+          <CTAButton
+            label="Secundário"
+            variant="secondary"
+            href="/historia"
+          />
 
           <CTAButton
-            label="Texto bem grande pra testar quebra de linha no mobile first sem estourar layout nenhum"
+            label="Ghost"
+            variant="ghost"
+            href="/agenda"
+          />
+
+          <CTAButton label="Disabled" disabled />
+
+          <CTAButton
+            label="Texto longo para testar quebra no mobile first sem estourar layout"
             variant="secondary"
             href="/apoie"
           />
         </div>
-      </section>
-      <section>
-        <Heading variant="h1">H1 — Playfair Display</Heading>
+      </Section>
+
+      {/* IMAGEM */}
+      <Section title="Imagem responsiva">
         <Text>
-          Body — Inter. Texto padrão do sistema. Mobile first, leitura confortável.
+          A imagem deve respeitar telas pequenas e manter proporção.
         </Text>
 
-        <Heading variant="h2">H2 — Seção</Heading>
-        <Text variant="muted">
-          Texto muted com leve opacidade.
-        </Text>
+        <CmsImage
+          src="/images/example.jpg"
+          alt="Imagem de exemplo"
+          width={1200}
+          height={800}
+        />
+      </Section>
 
-        <Heading variant="h3">H3 — Subtítulo</Heading>
-        <Text variant="small">
-          Texto pequeno para metadados.
-        </Text>
-      </section>
+      {/* ÍCONES */}
+      <Section title="Ícones (Lucide)">
+        <div className="flex flex-wrap gap-6 items-center">
+          <IconItem icon={<Mail size={20} />} label="Email" />
+          <IconItem icon={<Phone size={20} />} label="Telefone" />
+          <IconItem icon={<MapPin size={20} />} label="Endereço" />
+          <IconItem icon={<Calendar size={20} />} label="Agenda" />
+          <IconItem icon={<HeartHandshake size={20} />} label="Apoie" />
+          <IconItem icon={<Music size={20} />} label="Música" />
+        </div>
+      </Section>
+
     </main>
+  );
+}
+
+function IconItem({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <span className="inline-flex items-center gap-2">
+      {icon}
+      <Text variant="small">{label}</Text>
+    </span>
   );
 }
