@@ -20,7 +20,6 @@ import {
 export default function StyleguidePage() {
   return (
     <main className="flex flex-col gap-16 py-12">
-
       {/* Hero */}
       <section className="mt-16 flex flex-col gap-12">
         {/* 1) padrão (dim só) */}

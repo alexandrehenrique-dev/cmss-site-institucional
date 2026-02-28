@@ -1,10 +1,12 @@
 html, body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg);
 }
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--fg);
   line-height: var(--leading-normal);

@@ -1,7 +1,7 @@
 :root {
   /* ===== Core (defaults = LIGHT) ===== */
   --bg: #fcfcfc;
-  --fg: #34363b;
+  --fg: #141518; 
 
   --surface-1: #ffffff;
   --surface-2: #f6f6f7;
@@ -59,25 +59,31 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+
+  /* Overlay padrão (light) */
+  --overlay: rgba(0, 0, 0, 0.55);
 }
 
 /* ===== DARK via sistema ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #34363b;
-    --fg: #fcfcfc;
+    --bg: #141518;
+    --fg: #f2f2f2;
 
-    --surface-1: #2c2e33;
-    --surface-2: #24262a;
-    --surface-3: #1f2125;
+    --surface-1: #1b1d21;
+    --surface-2: #202228;
+    --surface-3: #262830;
 
-    --border: #4a4d53;
-    --muted: #b4b7be;
+    --border: #2e3138;
+    --muted: #9ca0a8;
 
     --primary: #b10000;
     --accent: #d3af37;
 
     --link: var(--accent);
     --link-hover: #e1c251;
+
+    /* Overlay no dark pode ser um pouco mais forte */
+    --overlay: rgba(0, 0, 0, 0.75);
   }
 }
