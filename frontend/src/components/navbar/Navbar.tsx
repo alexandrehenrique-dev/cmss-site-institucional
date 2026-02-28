@@ -26,7 +26,8 @@ export function Navbar({ content, className = "" }: NavbarProps) {
       <nav
         aria-label="Navegação principal"
         className={[
-          "sticky top-0 z-40",
+          "top-0 left-0 right-0 z-50",
+          "w-full",
           "border-b-[3px] border-[var(--accent)]",
           "bg-[var(--bg)] text-[var(--fg)]",
           className,

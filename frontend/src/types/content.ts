@@ -21,13 +21,24 @@ export type NavbarContent = {
   links: NavbarLink[];
 };
 
-export type Footer = {
-  text: string;
+export type SocialPlatform = "youtube" | "instagram" | "tiktok" | "facebook";
+
+export type FooterSocialLink = {
+  platform: SocialPlatform;
+  label: string;
+  href: string;
+};
+
+export type FooterContent = {
+  foundedYear: number;
+  traditionText: string; // ex: "{years} anos de tradição e cultura"
+  socialLinks?: FooterSocialLink[];
+  copyrightText: string;
 };
 
 export type GlobalContent = {
   navbar: NavbarContent;
-  footer: Footer;
+  footer: FooterContent;
 };
 
 export type Hero = {

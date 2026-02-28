@@ -19,15 +19,15 @@ import {
 
 export default function StyleguidePage() {
   return (
-    <main className="flex flex-col gap-16 py-12">
+    <main className="flex flex-col">
       {/* Hero */}
-      <section className="mt-16 flex flex-col gap-12">
+      <section className="flex flex-col">
         {/* 1) padrão (dim só) */}
         <Hero
           content={{
             title: "Hero padrão (dim)",
             subtitle: "Sem gradiente, sem blur. Só escurece a imagem.",
-            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
+            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 1000 },
             overlay: { dim: 0.45 },
             cta: { label: "Apoie", href: "/apoie" },
           }}

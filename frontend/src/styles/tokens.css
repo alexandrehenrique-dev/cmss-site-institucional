@@ -40,9 +40,6 @@
   --ink-300: #24262a;
   --ink-400: #1f2125;
 
-  /* ===== Typography tokens ===== */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
@@ -70,9 +67,10 @@
 
   /* Overlay padrão (light) */
   --overlay: rgba(0, 0, 0, 0.55);
+
+  --bg-footer: #141518;
 }
 
-/* ===== DARK via sistema ===== */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #141518;

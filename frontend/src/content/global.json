@@ -15,6 +15,14 @@
     ]
   },
   "footer": {
-    "text": "© Corporação Musical São Sebastião"
+    "foundedYear": 1951,
+    "traditionText": "{years} anos de tradição e cultura",
+    "socialLinks": [
+      { "platform": "youtube", "label": "YouTube", "href": "https://youtube.com" },
+      { "platform": "instagram", "label": "Instagram", "href": "https://instagram.com" },
+      { "platform": "tiktok", "label": "TikTok", "href": "https://tiktok.com" },
+      { "platform": "facebook", "label": "Facebook", "href": "https://facebook.com" }
+    ],
+    "copyrightText": "© Corporação Musical São Sebastião"
   }
 }

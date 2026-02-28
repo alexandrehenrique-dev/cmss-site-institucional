@@ -96,7 +96,7 @@ export function Hero({ content, className = "" }: HeroProps) {
     <header
       className={[
         "relative w-full overflow-hidden",
-        "min-h-[420px] md:min-h-[520px] lg:min-h-[620px]",
+        "min-h-[420px] md:min-h-[520px] lg:min-h-[800px]",
         "bg-[var(--bg)]",
         className,
       ].join(" ")}
