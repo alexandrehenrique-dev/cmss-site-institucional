@@ -1,36 +1,28 @@
 /* Fonts (Google Fonts via CSS) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Tokens e resets base (fonte da verdade de cores = tokens.css) */
 @import "../styles/tokens.css";
 @import "../styles/base.css";
+
+/* Tailwind v4 */
 @import "tailwindcss";
 
+/* Tipografia: só fontes aqui */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --font-heading: "Playfair Display", ui-serif, Georgia, serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* BODY usa tokens (bg/fg), não inventa outro par */
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--fg);
 }
 
+/* Headings em serifada */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
@@ -41,7 +33,7 @@ dialog {
   padding: 0;
 }
 
-/* Backdrop do <dialog> (garante que pega mesmo com Tailwind/ordem de imports) */
+/* Backdrop do <dialog> */
 dialog[open]::backdrop {
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--overlay);
 }

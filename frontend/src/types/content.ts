@@ -5,14 +5,20 @@ export type Image = {
   height: number;
 }
 
-export type NavLink = {
+export type NavbarLink = {
   label: string;
   href: string;
 };
 
-export type Navbar = {
-  title: string;
-  links: NavLink[];
+export type NavbarTitle = {
+  line1: string;
+  line2: string;
+};
+
+export type NavbarContent = {
+  title: NavbarTitle;
+  logoSrc?: string;
+  links: NavbarLink[];
 };
 
 export type Footer = {
@@ -20,7 +26,7 @@ export type Footer = {
 };
 
 export type GlobalContent = {
-  navbar: Navbar;
+  navbar: NavbarContent;
   footer: Footer;
 };
 

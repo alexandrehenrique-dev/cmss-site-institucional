@@ -1,6 +1,10 @@
 {
   "navbar": {
-    "title": "Corporação Musical São Sebastião",
+    "title": {
+      "line1": "Corporação Musical",
+      "line2": "São Sebastião"
+    },
+    "logoSrc": "/images/logo.png",
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Quem Somos", "href": "/quem-somos" },

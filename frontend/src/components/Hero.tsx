@@ -95,12 +95,12 @@ export function Hero({ content, className = "" }: HeroProps) {
   return (
     <header
       className={[
-        "relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden",
+        "relative w-full overflow-hidden",
         "min-h-[420px] md:min-h-[520px] lg:min-h-[620px]",
         "bg-[var(--bg)]",
         className,
       ].join(" ")}
-    >
+    >|
       {hasImage && (
         <div className="absolute inset-0">
           <Image

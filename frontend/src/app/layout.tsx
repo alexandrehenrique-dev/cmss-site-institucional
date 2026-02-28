@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
-import Link from 'next/link';
-import { Container } from '@/components/Container';
-import { getGlobalContent } from '@/services/contentService';
-import './globals.css';
+import type { ReactNode } from "react";
+import { Container } from "@/components/Container";
+import { Navbar } from "@/components/navbar/Navbar";
+import { getGlobalContent } from "@/services/contentService";
+import "./globals.css";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const global = getGlobalContent();
@@ -10,29 +10,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className="min-h-screen flex flex-col">
-        <header className="border-b">
-          <Container>
-            <nav className="flex flex-col gap-4 py-4">
-              <h1 className="text-lg font-semibold">
-                {global.navbar.title}
-              </h1>
+        {/* Navbar FULL WIDTH */}
+        <Navbar content={global.navbar} />
 
-              <ul className="flex flex-col gap-2">
-                {global.navbar.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </Container>
-        </header>
+        {/* Conteúdo centralizado */}
         <main className="flex-1 py-8">
-          <Container>{children}</Container>
+          {children}
         </main>
-        <footer className="border-t py-4">
+
+        {/* Footer centralizado */}
+        <footer className="border-t py-4 bg-[var(--bg)] text-[var(--fg)]">
           <Container>
             <p>{global.footer.text}</p>
           </Container>
