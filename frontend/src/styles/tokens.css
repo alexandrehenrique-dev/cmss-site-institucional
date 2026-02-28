@@ -46,14 +46,22 @@
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
 
-  --leading-tight: 1.25;
-  --leading-normal: 1.6;
+  /* Tipografia */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+
+  /* sobe um pouco pq Montserrat “parece menor” */
+  --text-lg: 1.125rem;
+  --text-xl: 1.3125rem;     /* antes 1.25 */
+  --text-2xl: 1.625rem;     /* antes 1.5 */
+  --text-3xl: 2rem;         /* antes 1.875 */
+  --text-4xl: 2.5rem;       /* antes 2.25 */
+
+  /* line heights — serif precisa de controle */
+  --leading-tight: 1.15;    /* antes 1.25 */
+  --leading-normal: 1.65;   /* antes 1.6  */
   --leading-loose: 1.9;
 
   --radius-sm: 8px;
