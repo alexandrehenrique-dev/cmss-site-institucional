@@ -20,6 +20,22 @@
     {
       "title": "Quem Somos",
       "text": "Uma banda, uma escola e um símbolo cultural."
+    },
+    {
+      "gallery": {
+        "initialIndex": 0,
+        "aspectRatio": "16/9",
+        "items": [
+          {
+            "src": "/images/example.jpg",
+            "alt": "Apresentação em 1975",
+            "width": 1600,
+            "height": 900,
+            "caption": "1975 — Festa tradicional",
+            "description": "Texto opcional maior para contexto histórico (timeline)."
+          }
+        ]
+      }
     }
   ]
 }

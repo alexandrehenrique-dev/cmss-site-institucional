@@ -1,20 +1,36 @@
-import { ElementType, ReactNode } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactNode,
+} from "react";
+
+/**
+ * Polymorphic types (padrão mercado)
+ * - Permite: <Text id="x" aria-label="..." as="span" ... />
+ * - Sem any
+ */
+type PropsOf<T extends ElementType> = ComponentPropsWithoutRef<T>;
+
+type PolymorphicProps<
+  T extends ElementType,
+  OwnProps extends object = Record<string, never>,
+> = OwnProps & {
+  as?: T;
+} & Omit<PropsOf<T>, keyof OwnProps | "as">;
 
 type HeadingVariant = "h1" | "h2" | "h3";
 type TextVariant = "body" | "muted" | "small";
 
-type BaseProps<T extends ElementType> = {
-  as?: T;
-  className?: string;
-  children: ReactNode;
-};
-
-type HeadingProps<T extends ElementType> = BaseProps<T> & {
+type HeadingOwnProps = {
   variant?: HeadingVariant;
+  className?: string;
+  children?: ReactNode;
 };
 
-type TextProps<T extends ElementType> = BaseProps<T> & {
+type TextOwnProps = {
   variant?: TextVariant;
+  className?: string;
+  children?: ReactNode;
 };
 
 /* ============================= */
@@ -34,17 +50,23 @@ function getHeadingClasses(variant: HeadingVariant): string {
   }
 }
 
-export function Heading<T extends ElementType = "h2">({
-  as,
-  variant = "h2",
-  className = "",
-  children,
-}: HeadingProps<T>) {
+export function Heading<T extends ElementType = "h2">(
+  props: PolymorphicProps<T, HeadingOwnProps>
+) {
+  const {
+    as,
+    variant = "h2",
+    className = "",
+    children,
+    ...rest
+  } = props;
+
   const Component = (as ?? variant) as ElementType;
 
   return (
     <Component
       className={`${getHeadingClasses(variant)} break-words ${className}`}
+      {...rest}
     >
       {children}
     </Component>
@@ -68,17 +90,23 @@ function getTextClasses(variant: TextVariant): string {
   }
 }
 
-export function Text<T extends ElementType = "p">({
-  as,
-  variant = "body",
-  className = "",
-  children,
-}: TextProps<T>) {
+export function Text<T extends ElementType = "p">(
+  props: PolymorphicProps<T, TextOwnProps>
+) {
+  const {
+    as,
+    variant = "body",
+    className = "",
+    children,
+    ...rest
+  } = props;
+
   const Component = (as ?? "p") as ElementType;
 
   return (
     <Component
       className={`${getTextClasses(variant)} break-words ${className}`}
+      {...rest}
     >
       {children}
     </Component>
