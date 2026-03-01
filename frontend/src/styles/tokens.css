@@ -69,6 +69,27 @@
   --overlay: rgba(0, 0, 0, 0.55);
 
   --bg-footer: #141518;
+
+  /* ===== GOLD SYSTEM ===== */
+
+  --gold-base: #D4AF37;
+  --gold-light: #F5D76E;
+
+  --gold-border: rgba(212, 175, 55, 0.35);
+  --gold-bg-subtle: rgba(212, 175, 55, 0.08);
+
+  --gold-glow-soft: rgba(212, 175, 55, 0.45);
+  --gold-glow-strong: rgba(212, 175, 55, 0.6);
+
+  /* ===== GLASS SYSTEM ===== */
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+
+  /* ===== SHADOW SYSTEM ===== */
+
+  --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --shadow-gold-glow: 0 0 18px var(--gold-glow-strong),
+                      0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -7,6 +7,19 @@ import { CmsImage } from "@/components/CmsImage";
 import { TextBlock } from "@/components/TextBlock";
 import { ImageBlock } from "@/components/ImageBlock";
 import { Hero } from "@/components/Hero";
+import { Gallery } from "@/components/gallery/Gallery";
+import type { GalleryItem } from "@/types/content";
+
+function makeItems(count: number): GalleryItem[] {
+  return Array.from({ length: count }).map((_, i) => ({
+    src: "/images/example.jpg",
+    alt: `Foto ${i + 1}`,
+    width: 1200,
+    height: 800,
+    caption: `Legenda ${i + 1}`,
+    description: `Descrição opcional da imagem ${i + 1} (mock).`,
+  }));
+}
 
 import {
   Mail,
@@ -18,6 +31,10 @@ import {
 } from "lucide-react";
 
 export default function StyleguidePage() {
+  const items8 = makeItems(8);
+  const items3 = makeItems(3);
+  const items1 = makeItems(1);
+  const items0: GalleryItem[] = [];
   return (
     <main className="flex flex-col">
       {/* Hero */}
@@ -252,6 +269,53 @@ export default function StyleguidePage() {
             text="Texto complementar explicando o contexto da imagem."
           />
 
+        </div>
+      </Section>
+
+      {/* Gallery 1 */}
+      <Section title="Gallery">
+        <div className="flex flex-col gap-10">
+          {/* 8 elementos começando no meio */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">8 itens — start no meio (index 4)</Heading>
+            <Text variant="muted">loop: false</Text>
+            <Gallery items={items8} initialIndex={4} loop={false} aspectRatio="16/9" />
+          </div>
+
+          {/* 8 elementos começando no 0 */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">8 itens — start no 0</Heading>
+            <Text variant="muted">loop: false</Text>
+            <Gallery items={items8} initialIndex={0} loop={false} aspectRatio="16/9" />
+          </div>
+
+          {/* 8 elementos começando no último */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">8 itens — start no último (index 7)</Heading>
+            <Text variant="muted">loop: false</Text>
+            <Gallery items={items8} initialIndex={7} loop={false} aspectRatio="16/9" />
+          </div>
+
+          {/* 3 elementos */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">3 itens</Heading>
+            <Text variant="muted">loop: true</Text>
+            <Gallery items={items3} initialIndex={1} loop aspectRatio="4/3" />
+          </div>
+
+          {/* 1 elemento */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">1 item</Heading>
+            <Text variant="muted">setas devem ficar desabilitadas</Text>
+            <Gallery items={items1} initialIndex={0} loop={false} aspectRatio="4/3" />
+          </div>
+
+          {/* 0 elementos */}
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">0 itens</Heading>
+            <Text variant="muted">não deve renderizar nada</Text>
+            <Gallery items={items0} initialIndex={0} loop={false} aspectRatio="16/9" />
+          </div>
         </div>
       </Section>
 
