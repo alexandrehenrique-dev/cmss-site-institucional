@@ -83,6 +83,7 @@ export function ImageBlock({
             className="text-left rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
             aria-haspopup="dialog"
             aria-controls={dialogId}
+            onPointerDown={(e) => e.stopPropagation()}
           >
             <CmsImage src={image.src} alt={image.alt} width={image.width} height={image.height} />
           </button>
@@ -106,6 +107,7 @@ export function ImageBlock({
         <dialog
           id={dialogId}
           ref={dialogRef}
+          onPointerDown={(e) => e.stopPropagation()}
           onClick={onDialogClick}
           className="fixed inset-0 m-auto w-[min(92vw,900px)] rounded-lg p-0 border border-[var(--border)] bg-[var(--bg)] text-[var(--fg)]"
           aria-label="Visualização de imagem"

@@ -57,3 +57,38 @@ export type PageContent = {
   hero: Hero;
   sections?: Section[];
 };
+
+export type GalleryItem = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  description?: string;
+};
+
+export type GalleryAutoplay = {
+  enabled: boolean;
+  intervalMs?: number;
+  pauseOnHover?: boolean;
+};
+
+export type GalleryVariant = "carousel" | "timeline";
+
+export type GalleryProps = {
+  items: GalleryItem[];
+  initialIndex?: number;
+  aspectRatio?: string;
+  className?: string;
+
+  /** Controlado (opcional) */
+  index?: number;
+  onChangeIndex?: (next: number) => void;
+
+  /** comportamento */
+  loop?: boolean;
+  autoplay?: GalleryAutoplay;
+
+  /** render */
+  variant?: GalleryVariant;
+};
