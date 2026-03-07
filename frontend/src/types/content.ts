@@ -92,3 +92,19 @@ export type GalleryProps = {
   /** render */
   variant?: GalleryVariant;
 };
+
+export type EventImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type EventCardProps = {
+  title: string;
+  date?: string;
+  location?: string;
+  description?: string;
+  image?: EventImage;
+  className?: string;
+};

@@ -9,6 +9,7 @@ import { ImageBlock } from "@/components/ImageBlock";
 import { Hero } from "@/components/Hero";
 import { Gallery } from "@/components/gallery/Gallery";
 import type { GalleryItem } from "@/types/content";
+import { EventCard } from "@/components/events/EventCard";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -317,6 +318,33 @@ export default function StyleguidePage() {
             <Gallery items={items0} initialIndex={0} loop={false} aspectRatio="16/9" />
           </div>
         </div>
+      </Section>
+      <Section>
+        <div className="flex flex-col gap-6 max-w-[720px]">
+          <EventCard
+            title="Show ao Vivo — Belo Horizonte"
+            date="2026-03-15"
+            location="Belo Horizonte"
+          />
+          <EventCard
+            title="Festival Rock das Montanhas"
+            date="2026-04-10"
+            location="Ouro Preto"
+            description="Apresentação especial com setlist completo do novo álbum."
+          />
+          <EventCard
+            title="Turnê Sudeste"
+            date="2026-05-02"
+            location="São Paulo"
+            description="Show especial da turnê Sudeste com convidados."
+            image={{
+              src: "/images/example.jpg",
+              alt: "Cartaz do evento",
+              width: 1200,
+              height: 800,
+            }}
+          />
+      </div>
       </Section>
 
     </main>
