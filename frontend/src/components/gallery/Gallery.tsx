@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryItem, GalleryProps } from "@/types/content";
-import { GalleryArrowButton } from "./GalleryArrowButton";
+import { ArrowButton } from "../ArrowButton";
 import { GallerySlide } from "./GallerySlide";
 import { useGallerySwipe } from "./useGallerySwipe";
 
@@ -148,21 +148,21 @@ export function Gallery({
         </div>
 
         <div className="absolute inset-0 flex items-center justify-between px-3 pointer-events-none">
-          <GalleryArrowButton
+          <ArrowButton
             disabled={!canPrev || animating}
             onClick={() => startMove(-1)}
             ariaLabel="Imagem anterior"
           >
             <ChevronLeft className="h-5 w-5" />
-          </GalleryArrowButton>
+          </ArrowButton>
 
-          <GalleryArrowButton
+          <ArrowButton
             disabled={!canNext || animating}
             onClick={() => startMove(1)}
             ariaLabel="Próxima imagem"
           >
             <ChevronRight className="h-5 w-5" />
-          </GalleryArrowButton>
+          </ArrowButton>
         </div>
       </div>
     </section>

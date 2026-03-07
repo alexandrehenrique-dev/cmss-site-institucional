@@ -36,7 +36,6 @@ export function ImageBlock({
     const el = dialogRef.current;
     if (!el) return;
 
-    // só pra garantir que fechou via ESC/backdrop não deixe nada pendurado
     const onClose = () => {};
     el.addEventListener("close", onClose);
     return () => el.removeEventListener("close", onClose);
@@ -91,28 +90,28 @@ export function ImageBlock({
           <CmsImage src={image.src} alt={image.alt} width={image.width} height={image.height} />
         )}
 
-        {(caption || text) && (
+        {(caption || text) ? (
           <figcaption className="flex flex-col gap-2">
-            {caption && (
+            {caption ? (
               <Text variant="small" className="italic opacity-80">
                 {caption}
               </Text>
-            )}
-            {text && <Text variant="muted">{text}</Text>}
+            ) : null}
+            {text ? <Text variant="muted">{text}</Text> : null}
           </figcaption>
-        )}
+        ) : null}
       </figure>
 
-      {enableModal && (
+      {enableModal ? (
         <dialog
           id={dialogId}
           ref={dialogRef}
           onPointerDown={(e) => e.stopPropagation()}
           onClick={onDialogClick}
-          className="fixed inset-0 m-auto w-[min(92vw,900px)] rounded-lg p-0 border border-[var(--border)] bg-[var(--bg)] text-[var(--fg)]"
+          className="fixed inset-0 m-auto w-[min(92vw,900px)] max-h-[90vh] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg)] p-0 text-[var(--fg)]"
           aria-label="Visualização de imagem"
         >
-          <div className="flex items-center justify-between gap-3 p-3 border-b border-[var(--border)]">
+          <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] p-3">
             <Text variant="small" className="opacity-80">
               {caption ?? image.alt}
             </Text>
@@ -123,20 +122,26 @@ export function ImageBlock({
               className="rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
               aria-label="Fechar"
             >
-              <X className="w-4 h-4" />
+              <X className="h-4 w-4" />
             </button>
           </div>
 
-          <div className="p-3">
-            <CmsImage src={image.src} alt={image.alt} width={image.width} height={image.height} />
-            {text && (
+          <div className="max-h-[calc(90vh-64px)] overflow-y-auto p-3">
+            <CmsImage
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              className="max-h-[70vh] w-full object-contain"
+            />
+            {text ? (
               <div className="mt-3">
                 <Text variant="muted">{text}</Text>
               </div>
-            )}
+            ) : null}
           </div>
         </dialog>
-      )}
+      ) : null}
     </>
   );
 }

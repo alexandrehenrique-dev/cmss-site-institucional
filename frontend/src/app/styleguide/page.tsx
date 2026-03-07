@@ -2,14 +2,11 @@
 
 import { Section } from "@/components/Section";
 import { Heading, Text } from "@/components/Typography";
-import { CTAButton } from "@/components/CTAButton";
-import { CmsImage } from "@/components/CmsImage";
-import { TextBlock } from "@/components/TextBlock";
-import { ImageBlock } from "@/components/ImageBlock";
 import { Hero } from "@/components/Hero";
 import { Gallery } from "@/components/gallery/Gallery";
-import type { GalleryItem } from "@/types/content";
 import { EventCard } from "@/components/events/EventCard";
+import { EventList } from "@/components/events/EventList";
+import type { GalleryItem } from "@/types/content";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -22,316 +19,100 @@ function makeItems(count: number): GalleryItem[] {
   }));
 }
 
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Calendar,
-  HeartHandshake,
-  Music,
-} from "lucide-react";
+const styleguideEvents = [
+  {
+    title: "Show ao Vivo — Belo Horizonte",
+    date: "2026-03-15",
+    location: "Belo Horizonte",
+    description: "Apresentação especial com setlist completo do novo álbum.",
+    image: {
+      src: "/images/example.jpg",
+      alt: "Cartaz do evento",
+      width: 1200,
+      height: 800,
+    },
+  },
+  {
+    title: "Festival Rock das Montanhas",
+    date: "2026-03-22",
+    location: "Ouro Preto",
+    description: "Evento cultural com repertório especial da banda.",
+  },
+  {
+    title: "Turnê Sudeste",
+    date: "2026-03-30",
+    location: "São Paulo",
+  },
+  {
+    title: "Turnê Sudeste",
+    date: "2026-04-30",
+    location: "São Paulo",
+  },
+  {
+    title: "Turnê Sudeste",
+    date: "2026-05-30",
+    location: "São Paulo",
+  },
+];
 
 export default function StyleguidePage() {
   const items8 = makeItems(8);
-  const items3 = makeItems(3);
-  const items1 = makeItems(1);
-  const items0: GalleryItem[] = [];
+
   return (
     <main className="flex flex-col">
-      {/* Hero */}
-      <section className="flex flex-col">
-        {/* 1) padrão (dim só) */}
-        <Hero
-          content={{
-            title: "Hero padrão (dim)",
-            subtitle: "Sem gradiente, sem blur. Só escurece a imagem.",
-            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 1000 },
-            overlay: { dim: 0.45 },
-            cta: { label: "Apoie", href: "/apoie" },
-          }}
-        />
+      <Hero
+        content={{
+          title: "Hero padrão",
+          subtitle: "Validação visual do componente Hero.",
+          image: {
+            src: "/images/example.jpg",
+            alt: "Exemplo",
+            width: 1200,
+            height: 1000,
+          },
+          overlay: { dim: 0.45 },
+          cta: { label: "Apoie", href: "/apoie" },
+        }}
+      />
 
-        {/* 2) gradiente vermelho -> transparente */}
-        <Hero
-          content={{
-            title: "Gradiente (primary → transparente)",
-            subtitle: "Estilo protótipo: identidade forte, texto legível.",
-            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
-            overlay: {
-              dim: 0.35,
-              gradient: {
-                type: "linear",
-                direction: "to-r",
-                from: "var(--primary)",
-                via: "transparent",
-                to: "transparent",
-                fromOpacity: 0.75,
-                viaOpacity: 0,
-                toOpacity: 0,
-              },
-            },
-            cta: { label: "Ver História", href: "/historia", variant: "secondary" },
-          }}
-        />
-
-        {/* 3) gradiente + blur */}
-        <Hero
-          content={{
-            title: "Gradiente + blur",
-            subtitle: "Blur controlado por parâmetro, sem gambiarra.",
-            image: { src: "/images/example.jpg", alt: "Exemplo", width: 1200, height: 800 },
-            overlay: {
-              dim: 0.25,
-              blur: 6,
-              gradient: {
-                type: "linear",
-                direction: "to-b",
-                from: "var(--primary)",
-                via: "transparent",
-                to: "transparent",
-                fromOpacity: 0.55,
-                viaOpacity: 0,
-                toOpacity: 0,
-              },
-            },
-            cta: { label: "Agenda", href: "/agenda" },
-          }}
-        />
-      </section>
-
-      {/* TÍTULO PRINCIPAL */}
       <Section>
         <Heading variant="h1">Styleguide CMSS</Heading>
         <Text>
-          Página para validar tipografia, cores, componentes e comportamento responsivo.
+          Página para validar tipografia, componentes e comportamento responsivo.
         </Text>
       </Section>
 
-      {/* TIPOGRAFIA */}
       <Section title="Tipografia">
         <div className="flex flex-col gap-6">
-          <Heading variant="h1">H1 — Playfair Display</Heading>
+          <Heading variant="h1">H1 — Cormorant Garamond</Heading>
           <Heading variant="h2">H2 — Seção</Heading>
           <Heading variant="h3">H3 — Subtítulo</Heading>
 
-          <Text>Texto padrão — Inter.</Text>
+          <Text>Texto padrão — Montserrat.</Text>
           <Text variant="muted">Texto muted.</Text>
-          <Text variant="small">Texto pequeno (metadado).</Text>
+          <Text variant="small">Texto pequeno.</Text>
         </div>
       </Section>
 
-      {/* CORES / SUPERFÍCIES */}
-      <Section title="Superfícies">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="p-4 rounded-md border bg-[var(--surface-1)]">
-            <Text>surface-1</Text>
-          </div>
-
-          <div className="p-4 rounded-md border bg-[var(--surface-2)]">
-            <Text>surface-2</Text>
-          </div>
-
-          <div className="p-4 rounded-md border bg-[var(--surface-3)]">
-            <Text>surface-3</Text>
-          </div>
-
-          <div className="p-4 rounded-md border bg-[var(--bg)]">
-            <Text>bg</Text>
-          </div>
-        </div>
-      </Section>
-
-      {/* BOTÕES */}
-      <Section title="CTAButton">
-        <div className="flex flex-col gap-4 max-w-sm">
-          <CTAButton label="Primário (Link)" href="/quem-somos" />
-
-          <CTAButton
-            label="Primário (Ação)"
-            onClick={() => console.log("Clique primário")}
-          />
-
-          <CTAButton
-            label="Secundário"
-            variant="secondary"
-            href="/historia"
-          />
-
-          <CTAButton
-            label="Ghost"
-            variant="ghost"
-            href="/agenda"
-          />
-
-          <CTAButton label="Disabled" disabled />
-
-          <CTAButton
-            label="Texto longo para testar quebra no mobile first sem estourar layout"
-            variant="secondary"
-            href="/apoie"
-          />
-        </div>
-      </Section>
-
-      {/* IMAGEM */}
-      <Section title="Imagem responsiva">
-        <Text>
-          A imagem deve respeitar telas pequenas e manter proporção.
-        </Text>
-
-        <CmsImage
-          src="/images/example.jpg"
-          alt="Imagem de exemplo"
-          width={1200}
-          height={800}
-        />
-      </Section>
-
-      {/* ÍCONES */}
-      <Section title="Ícones (Lucide)">
-        <div className="flex flex-wrap gap-6 items-center">
-          <IconItem icon={<Mail size={20} />} label="Email" />
-          <IconItem icon={<Phone size={20} />} label="Telefone" />
-          <IconItem icon={<MapPin size={20} />} label="Endereço" />
-          <IconItem icon={<Calendar size={20} />} label="Agenda" />
-          <IconItem icon={<HeartHandshake size={20} />} label="Apoie" />
-          <IconItem icon={<Music size={20} />} label="Música" />
-        </div>
-      </Section>
-
-      {/* TextBlock */}
-      <Section title="TextBlock">
-        <div className="flex flex-col gap-8 max-w-prose">
-          <TextBlock
-            title="Bloco simples"
-            text="Este é um TextBlock renderizando título e parágrafo usando Typography."
-          />
-
-          <TextBlock
-            title="Bloco com lista"
-            text="Agora com uma lista de itens:"
-            items={[
-              "Item 1: texto curto",
-              "Item 2: texto maior para testar quebra de linha no mobile sem estourar nada",
-              "Item 3: mais um item",
-            ]}
-          />
-
-          <TextBlock
-            text="Bloco sem título (somente texto)."
-          />
-
-          <TextBlock
-            title="Somente lista"
-            items={[
-              "Bullet 1",
-              "Bullet 2",
-            ]}
-          />
-
-          <TextBlock
-            title="Vazio não deve aparecer"
-            items={[]}
-          />
-        </div>
-      </Section>
-
-      {/* ImageBlock */}
-      <Section title="ImageBlock">
-        <div className="flex flex-col gap-10 max-w-xl">
-
-          <ImageBlock
-            image={{
-              src: "/images/example.jpg",
-              alt: "Imagem de exemplo",
-              width: 1200,
-              height: 800,
-            }}
-          />
-
-          <ImageBlock
-            image={{
-              src: "/images/example.jpg",
-              alt: "Imagem com legenda",
-              width: 1200,
-              height: 800,
-            }}
-            caption="Legenda da imagem"
-          />
-
-          <ImageBlock
-            image={{
-              src: "/images/example.jpg",
-              alt: "Imagem completa",
-              width: 1200,
-              height: 800,
-            }}
-            caption="Legenda estilizada"
-            text="Texto complementar explicando o contexto da imagem."
-          />
-
-        </div>
-      </Section>
-
-      {/* Gallery 1 */}
       <Section title="Gallery">
-        <div className="flex flex-col gap-10">
-          {/* 8 elementos começando no meio */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">8 itens — start no meio (index 4)</Heading>
-            <Text variant="muted">loop: false</Text>
-            <Gallery items={items8} initialIndex={4} loop={false} aspectRatio="16/9" />
-          </div>
-
-          {/* 8 elementos começando no 0 */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">8 itens — start no 0</Heading>
-            <Text variant="muted">loop: false</Text>
-            <Gallery items={items8} initialIndex={0} loop={false} aspectRatio="16/9" />
-          </div>
-
-          {/* 8 elementos começando no último */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">8 itens — start no último (index 7)</Heading>
-            <Text variant="muted">loop: false</Text>
-            <Gallery items={items8} initialIndex={7} loop={false} aspectRatio="16/9" />
-          </div>
-
-          {/* 3 elementos */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">3 itens</Heading>
-            <Text variant="muted">loop: true</Text>
-            <Gallery items={items3} initialIndex={1} loop aspectRatio="4/3" />
-          </div>
-
-          {/* 1 elemento */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">1 item</Heading>
-            <Text variant="muted">setas devem ficar desabilitadas</Text>
-            <Gallery items={items1} initialIndex={0} loop={false} aspectRatio="4/3" />
-          </div>
-
-          {/* 0 elementos */}
-          <div className="flex flex-col gap-3">
-            <Heading variant="h3">0 itens</Heading>
-            <Text variant="muted">não deve renderizar nada</Text>
-            <Gallery items={items0} initialIndex={0} loop={false} aspectRatio="16/9" />
-          </div>
-        </div>
+        <Gallery items={items8} initialIndex={4} loop={false} aspectRatio="16/9" />
       </Section>
-      <Section>
+
+      <Section title="EventCard">
         <div className="flex flex-col gap-6 max-w-[720px]">
           <EventCard
             title="Show ao Vivo — Belo Horizonte"
             date="2026-03-15"
             location="Belo Horizonte"
           />
+
           <EventCard
             title="Festival Rock das Montanhas"
             date="2026-04-10"
             location="Ouro Preto"
             description="Apresentação especial com setlist completo do novo álbum."
           />
+
           <EventCard
             title="Turnê Sudeste"
             date="2026-05-02"
@@ -344,24 +125,24 @@ export default function StyleguidePage() {
               height: 800,
             }}
           />
-      </div>
+        </div>
       </Section>
 
-    </main>
-  );
-}
+      <Section title="EventList">
+        <div className="flex flex-col gap-10">
+          <EventList
+            title="Eventos do mês"
+            items={styleguideEvents}
+            emptyMessage="Não existem eventos neste mês"
+          />
 
-function IconItem({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <span className="inline-flex items-center gap-2">
-      {icon}
-      <Text variant="small">{label}</Text>
-    </span>
+          <EventList
+            title="Lista vazia"
+            items={[]}
+            emptyMessage="Não existem eventos neste mês"
+          />
+        </div>
+      </Section>
+    </main>
   );
 }
