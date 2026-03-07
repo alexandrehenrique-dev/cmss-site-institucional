@@ -7,6 +7,7 @@ import { Gallery } from "@/components/gallery/Gallery";
 import { EventCard } from "@/components/events/EventCard";
 import { EventList } from "@/components/events/EventList";
 import type { GalleryItem } from "@/types/content";
+import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -18,6 +19,34 @@ function makeItems(count: number): GalleryItem[] {
     description: `Descrição opcional da imagem ${i + 1} (mock).`,
   }));
 }
+
+const institutionalItems = [
+  {
+    title: "Missão",
+    text: "Promover cultura, formação musical e transformação social por meio da música, fortalecendo vínculos com a comunidade e preservando a tradição da instituição.",
+  },
+  {
+    title: "Visão",
+    text: "Ser reconhecida como referência regional em educação musical, impacto cultural e continuidade de legado artístico, inspirando novas gerações de músicos.",
+  },
+  {
+    title: "Valores",
+    values: [
+      "Compromisso com a comunidade",
+      "Disciplina",
+      "Respeito",
+      "Ética",
+      "Tradição",
+      "Excelência musical",
+      "Inclusão",
+      "Trabalho em equipe",
+      "Responsabilidade cultural",
+      "Formação humana",
+      "Cooperação",
+      "Pertencimento",
+    ],
+  },
+];
 
 const styleguideEvents = [
   {
@@ -142,6 +171,12 @@ export default function StyleguidePage() {
             emptyMessage="Não existem eventos neste mês"
           />
         </div>
+      </Section>
+      <Section title="InstitutionalCards">
+        <InstitutionalCards
+          title="Quem Somos"
+          items={institutionalItems}
+        />
       </Section>
     </main>
   );

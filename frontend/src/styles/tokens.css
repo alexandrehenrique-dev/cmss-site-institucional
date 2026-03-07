@@ -90,6 +90,10 @@
   --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.28);
   --shadow-gold-glow: 0 0 18px var(--gold-glow-strong),
                       0 16px 40px rgba(0, 0, 0, 0.35);
+
+  .institutional-card-title {
+    color: var(--primary);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -112,5 +116,8 @@
 
     /* Overlay no dark pode ser um pouco mais forte */
     --overlay: rgba(0, 0, 0, 0.75);
+    .institutional-card-title {
+      color: var(--accent);
+    }
   }
 }
