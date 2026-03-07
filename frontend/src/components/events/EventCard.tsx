@@ -28,13 +28,14 @@ export function EventCard({
           "relative overflow-hidden",
           "border-t border-b border-[var(--gold-border)]",
           "bg-[var(--bg)]",
-          "px-4 py-4",
+          "px-4 py-3",
           "flex gap-4",
-          "min-h-[96px]",
+          "h-[250px]",
+          "w-full max-w-[500px]",
           className,
         ].join(" ")}
       >
-        {image && (
+        {image ? (
           <div className="absolute inset-0 z-0 opacity-25">
             <CmsImage
               src={image.src}
@@ -44,16 +45,16 @@ export function EventCard({
               className="w-full h-full object-cover"
             />
           </div>
-        )}
+        ) : null}
 
         <div className="absolute inset-0 bg-[var(--bg)] opacity-80" />
 
-        {dateParts && (
+        {dateParts ? (
           <EventDateColumn
             day={dateParts.day}
             month={dateParts.month}
           />
-        )}
+        ) : null}
 
         <EventMeta
           title={title}
@@ -64,7 +65,7 @@ export function EventCard({
         />
       </article>
 
-      {open && (
+      {open ? (
         <EventModal
           title={title}
           onClose={() => setOpen(false)}
@@ -73,7 +74,7 @@ export function EventCard({
           {...(dateParts?.full ? { date: dateParts.full } : {})}
           {...(location ? { location } : {})}
         />
-      )}
+      ) : null}
     </>
   );
 }
