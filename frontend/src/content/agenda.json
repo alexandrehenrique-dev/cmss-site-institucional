@@ -1,22 +1,226 @@
 {
   "hero": {
     "title": "Agenda",
-    "subtitle": "Acompanhe nossos eventos",
+    "subtitle": "Participe das apresentações e eventos e prestigie a nossa tradição.",
     "image": {
-      "src": "/images/example.jpg",
-      "alt": "Descrição",
-      "width": 1200,
-      "height": 800
+      "src": "/images/agenda/hero.jpg",
+      "alt": "Imagem de agenda e apresentações",
+      "width": 1600,
+      "height": 900
     }
   },
-  "sections": [
-    {
-      "title": "Eventos",
-      "items": [
-        "Concerto de Natal",
-        "Festival Regional",
-        "Apresentação Comunitária"
-      ]
-    }
-  ]
+  "events": {
+    "title": "Eventos do ano",
+    "items": [
+      {
+        "title": "Retreta Musical na Praça",
+        "date": "2026-01-11",
+        "location": "Macuco de Minas",
+        "description": "Onde existem imagens podemos colocar fotos de cartazes ou divulgação de eventos por exemplo.",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Cartaz da retreta musical",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Encontro de Bandas de Verão",
+        "date": "2026-01-25",
+        "location": "Itumirim"
+      },
+      {
+        "title": "Procissão de São Sebastião",
+        "date": "2026-02-01",
+        "location": "Macuco de Minas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Festa da Igreja Matriz",
+        "date": "2026-02-14",
+        "location": "Lavras",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem da festa da igreja",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Retreta de Carnaval",
+        "date": "2026-02-28",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Encontro Regional de Bandas",
+        "date": "2026-03-08",
+        "location": "São Bento Abade",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Procissão de Quaresma",
+        "date": "2026-03-22",
+        "location": "Itumirim"
+      },
+      {
+        "title": "Retreta Musical de Outono",
+        "date": "2026-04-05",
+        "location": "Macuco de Minas",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem da retreta de outono",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Apresentação na Festa da Comunidade",
+        "date": "2026-04-19",
+        "location": "Ingaí"
+      },
+      {
+        "title": "Encontro de Bandas Sacras",
+        "date": "2026-05-03",
+        "location": "São João del-Rei",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Procissão Mariana",
+        "date": "2026-05-17",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Retreta na Praça Central",
+        "date": "2026-05-31",
+        "location": "Lavras"
+      },
+      {
+        "title": "Festa do Padroeiro",
+        "date": "2026-06-07",
+        "location": "Macuco de Minas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem da festa do padroeiro",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Apresentação na Quermesse",
+        "date": "2026-06-21",
+        "location": "Itutinga"
+      },
+      {
+        "title": "Encontro de Bandas do Campo das Vertentes",
+        "date": "2026-07-05",
+        "location": "Carrancas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Retreta de Inverno",
+        "date": "2026-07-19",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Procissão de Nossa Senhora",
+        "date": "2026-08-02",
+        "location": "Macuco de Minas",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem da procissão de Nossa Senhora",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Concerto na Igreja",
+        "date": "2026-08-16",
+        "location": "Lavras"
+      },
+      {
+        "title": "Encontro de Bandas Filarmônicas",
+        "date": "2026-08-30",
+        "location": "Nazareno",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Retreta da Primavera",
+        "date": "2026-09-13",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Festa da Comunidade Rural",
+        "date": "2026-09-27",
+        "location": "Luminárias"
+      },
+      {
+        "title": "Procissão do Rosário",
+        "date": "2026-10-04",
+        "location": "Macuco de Minas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Encontro de Bandas de Outubro",
+        "date": "2026-10-18",
+        "location": "Itumirim",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem do encontro de bandas de outubro",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Retreta Musical da Juventude",
+        "date": "2026-10-25",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Apresentação na Festa de Santa Cecília",
+        "date": "2026-11-08",
+        "location": "Lavras",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Procissão e Celebração Musical",
+        "date": "2026-11-22",
+        "location": "Macuco de Minas"
+      },
+      {
+        "title": "Encontro de Bandas de Fim de Ano",
+        "date": "2026-12-06",
+        "location": "São Bento Abade",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem do encontro de bandas de fim de ano",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      {
+        "title": "Retreta Natalina",
+        "date": "2026-12-13",
+        "location": "Macuco de Minas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Apresentação na Novena de Natal",
+        "date": "2026-12-20",
+        "location": "Itumirim"
+      },
+      {
+        "title": "Festa da Igreja e Encerramento do Ano Musical",
+        "date": "2026-12-27",
+        "location": "Macuco de Minas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image": {
+          "src": "/images/example.jpg",
+          "alt": "Imagem do encerramento do ano musical",
+          "width": 1200,
+          "height": 800
+        }
+      }
+    ]
+  }
 }
