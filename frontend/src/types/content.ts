@@ -178,6 +178,7 @@ export type HeroContent = {
   subtitle?: string;
   image?: Image;
   cta?: HeroCTA;
+  forceGoldTitle?: boolean;
 };
 
 export type EventListContent = {

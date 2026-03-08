@@ -26,6 +26,8 @@ type TextOwnProps = {
   variant?: TextVariant;
   className?: string;
   children?: ReactNode;
+  text?: string;
+  preserveBreaks?: boolean;
 };
 
 function getHeadingClasses(variant: HeadingVariant): string {
@@ -85,17 +87,25 @@ export function Text<T extends ElementType = "p">(
     variant = "body",
     className = "",
     children,
+    text,
+    preserveBreaks = true,
     ...rest
   } = props;
 
   const Component = (as ?? "p") as ElementType;
+  const content = text ?? children;
 
   return (
     <Component
-      className={`${getTextClasses(variant)} break-words cursor-default ${className}`}
+      className={[
+        getTextClasses(variant),
+        "break-words cursor-default",
+        preserveBreaks ? "whitespace-pre-line" : "",
+        className,
+      ].join(" ")}
       {...rest}
     >
-      {children}
+      {content}
     </Component>
   );
 }
