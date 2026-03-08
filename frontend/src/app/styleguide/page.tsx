@@ -9,6 +9,7 @@ import { EventList } from "@/components/events/EventList";
 import type { GalleryItem } from "@/types/content";
 import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
 import { SupportCards } from "@/components/support/SupportCards";
+import { ContactInfo } from "@/components/contact/ContactInfo";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -105,6 +106,25 @@ const supportItems = [
   },
 ];
 
+const contactInfoMock = [
+  {
+    label: "Endereço",
+    value: "Rua Maestro Carlos Gomes, 123 - Centro",
+    secondaryValue: "Macuco de Minas - MG",
+    type: "address" as const,
+  },
+  {
+    label: "Telefone",
+    value: "(35) 99999-9999",
+    type: "phone" as const,
+  },
+  {
+    label: "Email",
+    value: "contato@cmss.org.br",
+    type: "email" as const,
+  },
+];
+
 export default function StyleguidePage() {
   const items8 = makeItems(8);
 
@@ -193,16 +213,19 @@ export default function StyleguidePage() {
           />
         </div>
       </Section>
-      <Section>
+      <Section title="Missão, Visão e Valores">
         <InstitutionalCards
-          title="Quem Somos"
           items={institutionalItems}
         />
       </Section>
-      <Section>
+      <Section title="Formas de Apoio">
         <SupportCards
-          title="Formas de Apoio"
           items={supportItems}
+        />
+      </Section>
+      <Section title="Contato">
+        <ContactInfo
+          items={contactInfoMock}
         />
       </Section>
     </main>
