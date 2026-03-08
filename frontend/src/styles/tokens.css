@@ -91,6 +91,30 @@
   --shadow-gold-glow: 0 0 18px var(--gold-glow-strong),
                       0 16px 40px rgba(0, 0, 0, 0.35);
 
+  --glass-bg: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  --glass-backdrop-blur: 18px;
+  --glass-backdrop-saturate: 160%;
+  --glass-overlay: rgba(10, 10, 10, 0.18);
+
+  --motion-duration-fast: 180ms;
+  --motion-duration-base: 260ms;
+  --motion-duration-slow: 420ms;
+
+  --motion-ease-standard: cubic-bezier(.16,1,.3,1);
+  --motion-ease-soft: cubic-bezier(.22,.61,.36,1);
+  --motion-ease-exit: cubic-bezier(.4,0,1,1);
+
+  --motion-scale-hover-sm: 1.015;
+  --motion-scale-hover-md: 1.03;
+  --motion-scale-press: 0.97;
+
+  --image-hover-scale: 1.035;
+
+  --shadow-interactive: 0 10px 26px rgba(0, 0, 0, 0.14);
+  --shadow-interactive-strong: 0 16px 40px rgba(0, 0, 0, 0.20);
+
   .institutional-card-title {
     color: var(--primary);
   }
@@ -116,6 +140,15 @@
 
     /* Overlay no dark pode ser um pouco mais forte */
     --overlay: rgba(0, 0, 0, 0.75);
+
+    --glass-bg: rgba(20, 21, 24, 0.58);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+    --glass-overlay: rgba(0, 0, 0, 0.30);
+
+    --shadow-interactive: 0 12px 28px rgba(0, 0, 0, 0.24);
+    --shadow-interactive-strong: 0 18px 44px rgba(0, 0, 0, 0.34);
+
     .institutional-card-title {
       color: var(--accent);
     }
