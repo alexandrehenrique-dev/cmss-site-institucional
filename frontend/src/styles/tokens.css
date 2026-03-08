@@ -115,9 +115,17 @@
   --shadow-interactive: 0 10px 26px rgba(0, 0, 0, 0.14);
   --shadow-interactive-strong: 0 16px 40px rgba(0, 0, 0, 0.20);
 
-  .institutional-card-title {
-    color: var(--primary);
-  }
+  --hero-title-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
+  --hero-title-glow: 0 1px 0 rgba(255, 255, 255, 0.10), 0 0 16px rgba(177, 0, 0, 0.24);
+}
+
+
+.institutional-card-title {
+  color: var(--primary);
+}
+
+.hero-title-glow {
+  text-shadow: var(--hero-title-shadow), var(--hero-title-glow);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -149,8 +157,10 @@
     --shadow-interactive: 0 12px 28px rgba(0, 0, 0, 0.24);
     --shadow-interactive-strong: 0 18px 44px rgba(0, 0, 0, 0.34);
 
-    .institutional-card-title {
-      color: var(--accent);
-    }
+    --hero-title-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
+    --hero-title-glow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 12px rgba(211, 175, 55, 0.22);
+  }
+  .institutional-card-title {
+    color: var(--accent);
   }
 }

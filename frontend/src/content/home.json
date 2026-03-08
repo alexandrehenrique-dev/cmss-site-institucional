@@ -1,41 +1,34 @@
 {
   "hero": {
     "title": "Corporação Musical São Sebastião",
-    "subtitle": "Desde 1951 mantendo a tradição",
+    "subtitle": "Desde 1951 mantendo a tradição.",
     "image": {
-      "src": "/images/example.jpg",
-      "alt": "Descrição",
-      "width": 1200,
-      "height": 800
+      "src": "/images/home/hero.jpg",
+      "alt": "Imagem principal da Corporação Musical São Sebastião",
+      "width": 1600,
+      "height": 900
+    },
+    "cta": {
+      "label": "Conheça nossa história",
+      "href": "/historia"
     }
   },
-  "sections": [
-    {
-      "title": "Próximos Eventos",
-      "items": [
-        "Encontro de Bandas - Março 2025",
-        "Concerto Especial - Abril 2025"
-      ]
+  "events": {
+    "title": "Eventos do mês",
+    "items": []
+  },
+  "secondaryHero": {
+    "title": "Quem somos",
+    "subtitle": "Conheça nossa trajetória e missão.",
+    "image": {
+      "src": "/images/home/hero-2.jpg",
+      "alt": "Imagem institucional da banda",
+      "width": 1200,
+      "height": 600
     },
-    {
-      "title": "Quem Somos",
-      "text": "Uma banda, uma escola e um símbolo cultural."
-    },
-    {
-      "gallery": {
-        "initialIndex": 0,
-        "aspectRatio": "16/9",
-        "items": [
-          {
-            "src": "/images/example.jpg",
-            "alt": "Apresentação em 1975",
-            "width": 1600,
-            "height": 900,
-            "caption": "1975 — Festa tradicional",
-            "description": "Texto opcional maior para contexto histórico (timeline)."
-          }
-        ]
-      }
+    "cta": {
+      "label": "Saiba mais",
+      "href": "/quem-somos"
     }
-  ]
+  }
 }
