@@ -41,6 +41,7 @@ export type HeroContent = {
   };
   cta?: HeroCTA;
   overlay?: HeroOverlay;
+  forceGoldTitle?: boolean;
 };
 
 export type HeroProps = {
@@ -54,7 +55,7 @@ function clamp01(n: number) {
 }
 
 export function Hero({ content, className = "" }: HeroProps) {
-  const { title, subtitle, image, cta, overlay } = content;
+  const { title, subtitle, image, cta, overlay, forceGoldTitle = false } = content;
   if (!title) return null;
 
   const hasImage = Boolean(image?.src && image?.alt);
@@ -114,7 +115,7 @@ export function Hero({ content, className = "" }: HeroProps) {
               <Heading
                 variant="h1"
                 className={[
-                  "institutional-card-title",
+                  forceGoldTitle ? "text-[var(--accent)]" : "institutional-card-title",
                   "[text-shadow:0_0_12px_rgba(211,175,55,0.35),0_0_22px_rgba(211,175,55,0.18)]",
                   "dark:drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]",
                   "dark:[text-shadow:0_1px_0_rgba(255,255,255,0.04),0_0_12px_rgba(211,175,55,0.22)]",
