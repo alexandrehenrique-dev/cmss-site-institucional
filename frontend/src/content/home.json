@@ -23,12 +23,13 @@
     "image": {
       "src": "/images/home/hero-2.jpg",
       "alt": "Imagem institucional da banda",
-      "width": 1200,
-      "height": 600
+      "width": 1600,
+      "height": 900
     },
     "cta": {
       "label": "Saiba mais",
       "href": "/quem-somos"
-    }
+    },
+    "forceGoldTitle": true
   }
 }
