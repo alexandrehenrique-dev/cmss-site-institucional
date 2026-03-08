@@ -1,22 +1,126 @@
 {
   "hero": {
     "title": "História",
-    "subtitle": "Mais de 70 anos de música",
+    "subtitle": "Primeiros músicos da Corporação Musical São Sebastião – década de 1950.",
     "image": {
-      "src": "/images/example.jpg",
-      "alt": "Descrição",
+      "src": "/images/historia/hero.jpg",
+      "alt": "Imagem histórica da banda",
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "institution": {
+    "title": "A Instituição",
+    "text": "A Corporação Musical São Sebastião nasceu do esforço coletivo da comunidade de Macuco de Minas no início da década de 1950, quando moradores e lideranças locais uniram-se com o objetivo de criar uma banda de música que pudesse fortalecer as tradições culturais e religiosas da região. A iniciativa resultou na primeira apresentação da banda em janeiro de 1951, durante as festividades em honra a São Sebastião, padroeiro da comunidade, marco que simboliza o início de uma trajetória dedicada à música e à vida cultural local.\n\nAo longo das décadas, a instituição atravessou diferentes fases, sempre sustentada pelo compromisso de músicos, maestros e pela participação da própria comunidade. A banda tornou-se um importante símbolo cultural do distrito, mantendo viva a tradição das bandas civis do interior mineiro e contribuindo para a formação musical de novas gerações.\n\nNesta página, reunimos alguns dos principais momentos dessa trajetória. O conteúdo apresenta uma linha histórica que destaca acontecimentos, personagens e iniciativas que marcaram o desenvolvimento da Corporação ao longo do tempo. Mais do que um registro cronológico, trata-se de um convite para conhecer a construção coletiva de uma instituição que continua levando música, cultura e identidade à comunidade de Macuco de Minas e região.",
+    "image": {
+      "src": "/images/historia/2.jpg",
+      "alt": "Imagem histórica da instituição",
       "width": 1200,
       "height": 800
     }
   },
-  "sections": [
-    {
-      "title": "Linha do Tempo",
-      "items": [
-        "1951 - Fundação",
-        "2000 - Expansão",
-        "2020 - Reconhecimento"
-      ]
-    }
-  ]
+  "timeline": {
+    "title": "Linha do tempo",
+    "variant": "timeline",
+    "loop": false,
+    "items": [
+      {
+        "src": "/images/historia/1.jpg",
+        "alt": "Fundação da Corporação Musical São Sebastião (1950–1951)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Fundação da Corporação Musical São Sebastião (1950–1951)",
+        "description": "A Corporação Musical São Sebastião teve sua origem em 1950, quando os senhores Geraldo Magela de Jesus, José Miguel Boueri, José Licas e o Revmo. Pe. Paulo Pereira de Resende idealizaram a criação de uma banda de música para a comunidade de Macuco de Minas. A mobilização popular foi essencial para concretizar o projeto: moradores contribuíram com doações e iniciativas para arrecadar recursos destinados à compra dos primeiros instrumentos. O maestro José Amador, ex-regente da banda da Polícia Militar, foi convidado para ensinar música e conduzir os primeiros ensaios. O esforço coletivo resultou na primeira apresentação oficial da banda nos dias 20 e 21 de janeiro de 1951, durante a festa em honra a São Sebastião, data que passou a marcar oficialmente a fundação da Corporação."
+      },
+      {
+        "src": "/images/historia/GERALDO-MAGELA.jpg",
+        "alt": "Maestro Geraldo Magela",
+        "width": 1200,
+        "height": 800,
+        "caption": "Maestro Geraldo Magela"
+      },
+      {
+        "src": "/images/historia/3.jpg",
+        "alt": "Consolidação e continuidade musical (1960–1980)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Consolidação e continuidade musical (1960–1980)",
+        "description": "Entre as décadas de 1960 e 1980, a Corporação Musical São Sebastião consolidou sua presença cultural na comunidade, mantendo viva a tradição das bandas de música no interior mineiro. Nesse período, diversos maestros contribuíram para a continuidade das atividades musicais, entre eles João de Ibituruna e Osvaldo de Rio das Mortes. Destaca-se também a atuação de Geraldo Magela de Jesus, um dos idealizadores da banda, que assumiu a regência e o ensino musical em momentos considerados difíceis para a instituição, garantindo a preservação do grupo e sua permanência como referência cultural para a população local."
+      },
+      {
+        "src": "/images/historia/MAESTRO-OSVALDO.jpg",
+        "alt": "Maestro Osvaldo",
+        "width": 1200,
+        "height": 800,
+        "caption": "Maestro Osvaldo"
+      },
+      {
+        "src": "/images/historia/5.jpg",
+        "alt": "~1970",
+        "width": 1200,
+        "height": 800,
+        "caption": "~1970"
+      },
+      {
+        "src": "/images/historia/4.jpg",
+        "alt": "~1980",
+        "width": 1200,
+        "height": 800,
+        "caption": "~1980"
+      },
+      {
+        "src": "/images/historia/6.jpg",
+        "alt": "Preservação do acervo musical (1990)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Preservação do acervo musical (1990)",
+        "description": "No início da década de 1990, a Corporação Musical São Sebastião contou com a importante contribuição do maestro Cirilo Messias, tenente aposentado da Banda da Polícia Militar. Durante sua regência, foi realizado um trabalho significativo de organização e preservação do acervo musical da instituição. Muitas partituras e arranjos antigos encontravam-se deteriorados, e o maestro dedicou-se a recuperar e reorganizar esse material, resgatando obras do período inicial da banda e estabelecendo uma ligação entre a história da corporação e suas novas gerações de músicos."
+      },
+      {
+        "src": "/images/historia/GILSON-DE-FIGUEIREDO.jpg",
+        "alt": "Maestro Gilson de Figueiredo",
+        "width": 1200,
+        "height": 800,
+        "caption": "Maestro Gilson de Figueiredo"
+      },
+      {
+        "src": "/images/historia/7.jpg",
+        "alt": "Expansão e fortalecimento da formação musical (2000)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Expansão e fortalecimento da formação musical (2000)",
+        "description": "A partir de 2002, com a chegada do maestro Weberton Altair Figueiredo como regente e professor, iniciou-se um período de renovação e crescimento para a Corporação Musical São Sebastião. Um dos marcos dessa fase foi a criação da escola de música, oferecendo aulas gratuitas à comunidade de Macuco de Minas e região. Também foram implantadas atividades de musicalização infantil, ampliando o acesso à educação musical. Com essas iniciativas, o número de músicos da banda cresceu significativamente, passando de cerca de 15 integrantes para aproximadamente 40 participantes, além da organização de uma agenda mais estruturada de ensaios e apresentações. "
+      },
+      {
+        "src": "/images/historia/8.jpg",
+        "alt": "2006",
+        "width": 1200,
+        "height": 800,
+        "caption": "2006"
+      },
+      {
+        "src": "/images/historia/13.jpg",
+        "alt": "2007",
+        "width": 1200,
+        "height": 800,
+        "caption": "2007"
+      },
+      {
+        "src": "/images/historia/11.jpg",
+        "alt": "Integração cultural e criação do Encontro de Bandas (2010)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Integração cultural e criação do Encontro de Bandas (2010)",
+        "description": "Na década de 2010, a Corporação ampliou sua atuação cultural e passou a participar com maior frequência de eventos e encontros de bandas na região. Foi nesse contexto que surgiu o Encontro de Bandas de Macuco de Minas, idealizado pelo maestro Weberton Altair Figueiredo. O evento rapidamente se tornou uma importante iniciativa cultural local, reunindo diversas bandas de música e promovendo o intercâmbio artístico entre músicos de diferentes cidades. Ao longo de suas edições, o encontro consolidou-se como um evento de destaque na região, fortalecendo a tradição das bandas e ampliando o alcance cultural da Corporação."
+      },
+      {
+        "src": "/images/historia/14.jpg",
+        "alt": "Presente e continuidade da tradição (2020)",
+        "width": 1200,
+        "height": 800,
+        "caption": "Presente e continuidade da tradição (2020)",
+        "description": "Atualmente, a Corporação Musical São Sebastião mantém sua atuação como uma instituição cultural sem fins lucrativos dedicada à música e à formação de novos músicos. A presidência é exercida pela musicista Clara Maira da Silva, e a direção musical permanece sob a regência do maestro Weberton Altair Figueiredo. Com aproximadamente 60 músicos, a banda continua participando de festividades religiosas, eventos culturais e encontros de bandas, além de manter projetos de formação musical para a comunidade. A manutenção das atividades depende do apoio do poder público, de entidades privadas e da própria comunidade, que segue contribuindo para preservar essa importante tradição cultural local."
+      }
+    ]
+  }
 }
