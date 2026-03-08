@@ -16,22 +16,17 @@ export type HeroOverlayGradient =
   | {
       type: "linear";
       direction?: "to-r" | "to-l" | "to-b" | "to-t";
-      from?: string; // ex: "var(--primary)"
-      via?: string;  // ex: "transparent"
-      to?: string;   // ex: "transparent"
-      fromOpacity?: number; // 0..1
-      viaOpacity?: number;  // 0..1
-      toOpacity?: number;   // 0..1
+      from?: string;
+      via?: string;
+      to?: string;
+      fromOpacity?: number;
+      viaOpacity?: number;
+      toOpacity?: number;
     };
 
 export type HeroOverlay = {
-  /** escurece a imagem por baixo (0..1). default: 0.40 */
   dim?: number;
-
-  /** blur na imagem (0 = sem blur). default: 0 */
   blur?: number;
-
-  /** gradiente por cima (opcional) */
   gradient?: HeroOverlayGradient;
 };
 
@@ -45,8 +40,6 @@ export type HeroContent = {
     height: number;
   };
   cta?: HeroCTA;
-
-  /** overlay configurável (gradiente + blur) */
   overlay?: HeroOverlay;
 };
 
@@ -70,27 +63,7 @@ export function Hero({ content, className = "" }: HeroProps) {
   const blur = Math.max(0, typeof overlay?.blur === "number" ? overlay.blur : 0);
 
   const gradient = overlay?.gradient;
-  const useGradient = gradient && gradient.type !== "none";
-
-  // defaults gradiente
-  const direction = gradient && gradient.type === "linear" ? (gradient.direction ?? "to-r") : "to-r";
-  const from = gradient && gradient.type === "linear" ? (gradient.from ?? "var(--primary)") : "var(--primary)";
-  const via = gradient && gradient.type === "linear" ? (gradient.via ?? "transparent") : "transparent";
-  const to = gradient && gradient.type === "linear" ? (gradient.to ?? "transparent") : "transparent";
-
-  const fromOpacity = clamp01(gradient && gradient.type === "linear" ? (gradient.fromOpacity ?? 0.7) : 0.7);
-  const viaOpacity = clamp01(gradient && gradient.type === "linear" ? (gradient.viaOpacity ?? 0) : 0);
-  const toOpacity = clamp01(gradient && gradient.type === "linear" ? (gradient.toOpacity ?? 0) : 0);
-
-  const gradientStyle: React.CSSProperties | undefined = useGradient
-    ? {
-        backgroundImage: `linear-gradient(${direction.replace("to-", "to ")}, 
-          color-mix(in srgb, ${from} ${fromOpacity * 100}%, transparent),
-          color-mix(in srgb, ${via} ${viaOpacity * 100}%, transparent),
-          color-mix(in srgb, ${to} ${toOpacity * 100}%, transparent)
-        )`,
-      }
-    : undefined;
+  const useGradient = gradient?.type !== "none";
 
   return (
     <header
@@ -100,8 +73,8 @@ export function Hero({ content, className = "" }: HeroProps) {
         "bg-[var(--bg)]",
         className,
       ].join(" ")}
-    >|
-      {hasImage && (
+    >
+      {hasImage ? (
         <div className="absolute inset-0">
           <Image
             src={image!.src}
@@ -116,39 +89,62 @@ export function Hero({ content, className = "" }: HeroProps) {
             style={blur > 0 ? { filter: `blur(${blur}px)` } : undefined}
           />
 
-          {/* escurecimento base (dim) */}
-          <div className="absolute inset-0" style={{ background: `rgba(0,0,0,${dim})` }} />
+          <div
+            className="absolute inset-0"
+            style={{ background: `rgba(0,0,0,${dim})` }}
+          />
 
-          {/* gradiente opcional */}
-          {useGradient && <div className="absolute inset-0" style={gradientStyle} />}
+          {useGradient ? (
+            <div className="hero-edge-blend absolute inset-0" />
+          ) : null}
+
+          <div className="hero-aged-overlay absolute inset-0" />
         </div>
-      )}
+      ) : null}
 
       <Container>
-        <div className="relative z-10 flex flex-col items-center text-center">
-          <div className="w-full max-w-3xl py-14 md:py-20 lg:py-24">
+        <div
+          className={[
+            "relative z-10 flex flex-col items-center justify-center text-center",
+            "min-h-[420px] md:min-h-[520px] lg:min-h-[800px]",
+          ].join(" ")}
+        >
+          <div className="w-full max-w-3xl pb-14 pt-20 md:pb-20 md:pt-28 lg:pb-24 lg:pt-36">
             <div className="flex flex-col gap-5">
-              <Heading variant="h1" className="text-white">
+              <Heading
+                variant="h1"
+                className={[
+                  "institutional-card-title",
+                  "[text-shadow:0_0_12px_rgba(211,175,55,0.35),0_0_22px_rgba(211,175,55,0.18)]",
+                  "dark:drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]",
+                  "dark:[text-shadow:0_1px_0_rgba(255,255,255,0.04),0_0_12px_rgba(211,175,55,0.22)]",
+                ].join(" ")}
+              >
                 {title}
               </Heading>
 
-              {subtitle && (
-                <Text variant="muted" className="text-white/90 text-base md:text-lg">
+              {subtitle ? (
+                <Text
+                  variant="muted"
+                  className="text-base text-white/95 md:text-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+                >
                   {subtitle}
                 </Text>
-              )}
+              ) : null}
 
-              {cta?.label && (
-                <div className="pt-4 flex justify-center">
+              {cta?.label ? (
+                <div className="flex justify-center pt-4">
                   <CTAButton
                     label={cta.label}
                     variant={cta.variant ?? "primary"}
                     {...(cta.href ? { href: cta.href } : {})}
                     {...(cta.onClick ? { onClick: cta.onClick } : {})}
-                    {...(typeof cta.disabled === "boolean" ? { disabled: cta.disabled } : {})}
+                    {...(typeof cta.disabled === "boolean"
+                      ? { disabled: cta.disabled }
+                      : {})}
                   />
                 </div>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
