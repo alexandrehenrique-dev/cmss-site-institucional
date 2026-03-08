@@ -6,7 +6,7 @@ import { ContactInfo, ContactInfoProps } from "./ContactInfo";
 export type ContactSectionProps = {
   infoTitle?: string;
   infoItems: ContactInfoProps["items"];
-  formLabels?: ContactFormLabels;
+  formLabels?: ContactFormLabels | undefined;
   className?: string;
 };
 
