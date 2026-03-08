@@ -16,13 +16,36 @@ export type CTAButtonProps = {
 function getVariantClass(variant: CTAButtonVariant): string {
   switch (variant) {
     case "primary":
-      return "border-transparent text-white bg-[var(--primary)] hover:opacity-90";
+      return [
+        "border-transparent",
+        "bg-[var(--primary)] text-white",
+        "hover:opacity-95",
+        "hover:shadow-[var(--shadow-interactive)]",
+      ].join(" ");
+
     case "secondary":
-      return "border-[var(--border)] text-[var(--fg)] bg-[var(--surface-2)] hover:bg-[var(--surface-3)]";
+      return [
+        "border-[var(--border)]",
+        "bg-[var(--surface-2)] text-[var(--fg)]",
+        "hover:bg-[var(--surface-3)]",
+        "hover:shadow-[var(--shadow-interactive)]",
+      ].join(" ");
+
     case "ghost":
-      return "border-transparent text-[var(--link)] bg-transparent hover:underline";
+      return [
+        "border-transparent",
+        "bg-transparent text-[var(--link)]",
+        "hover:text-[var(--link-hover)]",
+        "hover:bg-[var(--surface-2)]/40",
+      ].join(" ");
+
     default:
-      return "border-transparent text-white bg-[var(--primary)] hover:opacity-90";
+      return [
+        "border-transparent",
+        "bg-[var(--primary)] text-white",
+        "hover:opacity-95",
+        "hover:shadow-[var(--shadow-interactive)]",
+      ].join(" ");
   }
 }
 
@@ -34,11 +57,14 @@ export function CTAButton({
   disabled = false,
   ariaLabel,
 }: CTAButtonProps) {
-  const baseClass =
-    "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium " +
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] " +
-    "disabled:opacity-50 disabled:cursor-not-allowed " +
-    "border";
+  const baseClass = [
+    "inline-flex items-center justify-center gap-2",
+    "rounded-md border px-4 py-2 text-sm font-medium",
+    "transition-[transform,box-shadow,color,background-color,border-color,opacity] duration-[var(--motion-duration-base)] ease-[var(--motion-ease-standard)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]",
+    "disabled:cursor-not-allowed disabled:opacity-50",
+    disabled ? "" : "hover:scale-[var(--motion-scale-hover-sm)] active:scale-[var(--motion-scale-press)]",
+  ].join(" ");
 
   const variantClass = getVariantClass(variant);
 
