@@ -108,3 +108,85 @@ export type EventCardProps = {
   image?: EventImage;
   className?: string;
 };
+
+export type SplitMediaSection = {
+  title: string;
+  text: string;
+  image: Image;
+};
+
+export type InstitutionalCardItem = {
+  title: string;
+  text?: string;
+  values?: string[];
+};
+
+export type InstitutionalCardsContent = {
+  title?: string;
+  items: InstitutionalCardItem[];
+};
+
+export type SupportIconName = "financial" | "institutional" | "materials" | "default";
+
+export type SupportCardItem = {
+  title: string;
+  text?: string;
+  icon?: SupportIconName;
+  copyLabel?: string;
+  copyValue?: string;
+};
+
+export type SupportCardsContent = {
+  title?: string;
+  items: SupportCardItem[];
+};
+
+export type ContactInfoItemData = {
+  label: string;
+  value: string;
+  type: "email" | "phone" | "address" | "link";
+  href?: string;
+  secondaryValue?: string;
+};
+
+export type ContactFormLabels = {
+  title?: string;
+  description?: string;
+  nameLabel?: string;
+  namePlaceholder?: string;
+  emailLabel?: string;
+  emailPlaceholder?: string;
+  messageLabel?: string;
+  messagePlaceholder?: string;
+  ctaLabel?: string;
+  disabledNote?: string;
+};
+
+export type ContactSectionContent = {
+  infoTitle?: string;
+  infoItems: ContactInfoItemData[];
+  formLabels?: ContactFormLabels;
+};
+
+export type HeroCTA = {
+  label: string;
+  href?: string;
+};
+
+export type HeroContent = {
+  title: string;
+  subtitle?: string;
+  image?: Image;
+  cta?: HeroCTA;
+};
+
+export type EventListContent = {
+  title: string;
+  items: EventCardProps[];
+};
+
+export type HomePageContent = {
+  hero: HeroContent;
+  events: EventListContent;
+  secondaryHero: HeroContent;
+};
