@@ -6,11 +6,16 @@ import { Hero } from "@/components/Hero";
 import { Gallery } from "@/components/gallery/Gallery";
 import { EventCard } from "@/components/events/EventCard";
 import { EventList } from "@/components/events/EventList";
-import type { GalleryItem } from "@/types/content";
 import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
 import { SupportCards } from "@/components/support/SupportCards";
 import { ContactInfo } from "@/components/contact/ContactInfo";
 import { ContactSection } from "@/components/contact/ContactSection";
+import { CTAButton } from "@/components/CTAButton";
+import { NavItem } from "@/components/navbar/NavItem";
+import { NavLinks } from "@/components/navbar/NavLinks";
+import type { GalleryItem } from "@/types/content";
+import { SplitMediaText } from "@/components/layout/SplitMediaText";
+import { ImageBlock } from "@/components/ImageBlock";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -140,8 +145,20 @@ const contactFormMock = {
   disabledNote: "O envio do formulário será habilitado em breve.",
 };
 
+const navLinksMock = [
+  { label: "Home", href: "/" },
+  { label: "Quem Somos", href: "/quem-somos" },
+  { label: "História", href: "/historia" },
+  { label: "Agenda", href: "/agenda" },
+  { label: "Apoie", href: "/apoie" },
+  { label: "Contato", href: "/contato" },
+];
+
 export default function StyleguidePage() {
   const items8 = makeItems(8);
+  const items3 = makeItems(3);
+  const items1 = makeItems(1);
+  const items0: GalleryItem[] = [];
 
   return (
     <main className="flex flex-col">
@@ -179,8 +196,63 @@ export default function StyleguidePage() {
         </div>
       </Section>
 
+      <Section title="CTAButton">
+        <div className="flex flex-col gap-4 max-w-sm">
+          <CTAButton label="Primário (Link)" href="/quem-somos" />
+          <CTAButton label="Primário (Ação)" onClick={() => console.log("primário")} />
+          <CTAButton label="Secundário" variant="secondary" href="/historia" />
+          <CTAButton label="Ghost" variant="ghost" href="/agenda" />
+          <CTAButton label="Disabled" disabled />
+          <CTAButton
+            label="Texto longo para testar quebra sem estourar o layout"
+            variant="secondary"
+            href="/apoie"
+          />
+        </div>
+      </Section>
+
+      <Section title="NavItem / NavLinks">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-wrap gap-4">
+            <NavItem href="/" label="Home" />
+            <NavItem href="/quem-somos" label="Quem Somos" />
+            <NavItem href="/agenda" label="Agenda" />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <Text variant="muted">Horizontal</Text>
+            <NavLinks links={navLinksMock} orientation="horizontal" />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <Text variant="muted">Vertical</Text>
+            <NavLinks links={navLinksMock} orientation="vertical" />
+          </div>
+        </div>
+      </Section>
+
       <Section title="Gallery">
-        <Gallery items={items8} initialIndex={4} loop={false} aspectRatio="16/9" />
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">8 itens — start no meio</Heading>
+            <Gallery items={items8} initialIndex={4} loop={false} aspectRatio="16/9" />
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">3 itens — loop</Heading>
+            <Gallery items={items3} initialIndex={1} loop aspectRatio="4/3" />
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">1 item</Heading>
+            <Gallery items={items1} initialIndex={0} loop={false} aspectRatio="4/3" />
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <Heading variant="h3">0 itens</Heading>
+            <Gallery items={items0} initialIndex={0} loop={false} aspectRatio="16/9" />
+          </div>
+        </div>
       </Section>
 
       <Section title="EventCard">
@@ -228,27 +300,79 @@ export default function StyleguidePage() {
           />
         </div>
       </Section>
+
       <Section title="Missão, Visão e Valores">
-        <InstitutionalCards
-          items={institutionalItems}
-        />
+        <InstitutionalCards items={institutionalItems} />
       </Section>
+
       <Section title="Formas de Apoio">
-        <SupportCards
-          items={supportItems}
-        />
+        <SupportCards items={supportItems} />
       </Section>
+
       <Section title="Contato">
-        <ContactInfo
-          items={contactInfoMock}
-        />
+        <ContactInfo items={contactInfoMock} />
       </Section>
+
       <Section title="ContactSection">
         <ContactSection
           infoTitle="Contato"
           infoItems={contactInfoMock}
           formLabels={contactFormMock}
         />
+      </Section>
+
+      <Section title="SplitMediaText">
+        <div className="flex flex-col gap-12">
+          <SplitMediaText>
+            <ImageBlock
+              image={{
+                src: "/images/example.jpg",
+                alt: "Imagem de exemplo",
+                width: 1200,
+                height: 800,
+              }}
+              caption="Imagem à esquerda"
+              text="No desktop fica à esquerda; no mobile sobe para cima."
+            />
+
+            <div className="flex flex-col gap-4">
+              <Heading variant="h2">Bloco texto + imagem</Heading>
+              <Text>
+                Este componente divide dois conteúdos em colunas no desktop e empilha em telas menores,
+                respeitando a ordem em que os children são passados.
+              </Text>
+              <Text variant="muted">
+                Ele serve para Hero secundário, seções institucionais, apoio, história e qualquer bloco editorial.
+              </Text>
+              <div className="pt-2">
+                <CTAButton label="Saiba mais" href="/quem-somos" />
+              </div>
+            </div>
+          </SplitMediaText>
+
+          <SplitMediaText align="start">
+            <div className="flex flex-col gap-4">
+              <Heading variant="h2">Texto primeiro</Heading>
+              <Text>
+                Aqui o primeiro child é texto, então no desktop ele fica à esquerda
+                e no mobile ele aparece em cima.
+              </Text>
+              <Text variant="muted">
+                Isso deixa o componente totalmente reutilizável sem precisar criar versão invertida.
+              </Text>
+            </div>
+
+            <ImageBlock
+              image={{
+                src: "/images/example.jpg",
+                alt: "Imagem de apoio",
+                width: 1200,
+                height: 800,
+              }}
+              caption="Imagem à direita"
+            />
+          </SplitMediaText>
+        </div>
       </Section>
     </main>
   );

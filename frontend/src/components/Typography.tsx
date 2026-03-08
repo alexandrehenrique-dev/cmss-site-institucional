@@ -4,11 +4,6 @@ import type {
   ReactNode,
 } from "react";
 
-/**
- * Polymorphic types (padrão mercado)
- * - Permite: <Text id="x" aria-label="..." as="span" ... />
- * - Sem any
- */
 type PropsOf<T extends ElementType> = ComponentPropsWithoutRef<T>;
 
 type PolymorphicProps<
@@ -32,10 +27,6 @@ type TextOwnProps = {
   className?: string;
   children?: ReactNode;
 };
-
-/* ============================= */
-/* Heading */
-/* ============================= */
 
 function getHeadingClasses(variant: HeadingVariant): string {
   switch (variant) {
@@ -65,17 +56,13 @@ export function Heading<T extends ElementType = "h2">(
 
   return (
     <Component
-      className={`${getHeadingClasses(variant)} break-words ${className}`}
+      className={`${getHeadingClasses(variant)} break-words cursor-default ${className}`}
       {...rest}
     >
       {children}
     </Component>
   );
 }
-
-/* ============================= */
-/* Text */
-/* ============================= */
 
 function getTextClasses(variant: TextVariant): string {
   switch (variant) {
@@ -105,7 +92,7 @@ export function Text<T extends ElementType = "p">(
 
   return (
     <Component
-      className={`${getTextClasses(variant)} break-words ${className}`}
+      className={`${getTextClasses(variant)} break-words cursor-default ${className}`}
       {...rest}
     >
       {children}

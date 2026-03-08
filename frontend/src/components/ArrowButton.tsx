@@ -23,27 +23,27 @@ export function ArrowButton({
       disabled={disabled}
       className={[
         "pointer-events-auto",
-        "h-11 w-11 rounded-full",
-        "flex items-center justify-center",
-        "backdrop-blur-xl",
-        "bg-[var(--glass-bg)]",
-        "border border-[var(--gold-border)]",
-        "shadow-[var(--shadow-elevated)]",
-        "transition-[transform,box-shadow,color,background-color,border-color,opacity] duration-200 ease-out",
+        "flex h-11 w-11 items-center justify-center rounded-full",
         "select-none",
+        "border border-[var(--gold-border)]",
+        "bg-[var(--glass-bg)]",
+        "backdrop-blur-xl",
         "text-[var(--gold-base)]",
+        "shadow-[var(--shadow-elevated)]",
+        "transition-[transform,box-shadow,color,background-color,border-color,opacity] duration-[var(--motion-duration-base)] ease-[var(--motion-ease-standard)]",
         "focus-visible:outline-none",
         "focus-visible:ring-2 focus-visible:ring-[var(--gold-base)]",
         "focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
         disabled
-          ? "opacity-35 cursor-not-allowed"
+          ? "cursor-not-allowed opacity-35"
           : [
               "cursor-pointer",
+              "hover:scale-[var(--motion-scale-hover-sm)]",
               "hover:text-[var(--gold-light)]",
               "hover:border-[var(--gold-light)]",
-              "hover:shadow-[var(--shadow-gold-glow)]",
               "hover:bg-[var(--gold-bg-subtle)]",
-              "active:scale-[0.95]",
+              "hover:shadow-[var(--shadow-gold-glow)]",
+              "active:scale-[var(--motion-scale-press)]",
             ].join(" "),
         className,
       ].join(" ")}
