@@ -3,7 +3,7 @@
     "title": "Quem somos",
     "subtitle": "Uma tradição musical e cultural.",
     "image": {
-      "src": "/images/quem-somos/hero.jpg",
+      "src": "/images/quem/hero.jpg",
       "alt": "Imagem institucional da banda",
       "width": 1600,
       "height": 900
@@ -14,7 +14,7 @@
     "title": "A Instituição",
     "text": "A Corporação Musical São Sebastião (CMSS) é uma instituição cultural sem fins lucrativos dedicada à promoção da música, da educação musical e da preservação das tradições culturais da comunidade de Macuco de Minas, distrito do município de Itumirim, em Minas Gerais.\n\nIdealizada em 1950 pelos senhores José Miguel Boueri, Geraldo Magela de Jesus, José Licas e pelo Revmo. Pe. Paulo Pereira de Resende, a banda nasceu do esforço coletivo da comunidade, que se mobilizou para adquirir instrumentos e viabilizar o ensino musical na localidade. Sua primeira apresentação oficial ocorreu em 20 de janeiro de 1951, durante as festividades em honra a São Sebastião, padroeiro que dá nome à instituição e cuja data marca oficialmente a sua fundação.\n\nAo longo de sua trajetória, a Corporação contou com a contribuição de diversos maestros e músicos que ajudaram a consolidar sua tradição musical. Desde 2001, a direção artística e regência estão sob responsabilidade do maestro Weberton Altair Figueiredo, músico formado e educador que iniciou sua formação na própria banda e tem se dedicado à formação de novos músicos e ao fortalecimento das atividades culturais da instituição.\n\nComprometida com o desenvolvimento cultural e social da comunidade, a CMSS mantém uma escola de música com aulas gratuitas, proporcionando acesso à educação musical para crianças, jovens e adultos de Macuco de Minas e região. A instituição também participa ativamente de festividades religiosas, eventos culturais e encontros de bandas, além de promover iniciativas próprias, como o tradicional Encontro de Bandas de Macuco de Minas, que reúne músicos e visitantes de toda a região.\n\nAtualmente, a Corporação Musical São Sebastião é composta por dezenas de músicos e segue cumprindo sua missão de levar música de qualidade, formar novos talentos e preservar a rica tradição das bandas de música mineiras.",
     "image": {
-      "src": "/images/quem-somos/institucional.jpg",
+      "src": "/images/quem/institucional.jpg",
       "alt": "Imagem da instituição",
       "width": 1200,
       "height": 800
@@ -54,7 +54,7 @@
     "title": "Atuação Cultural e Social",
     "text": "A Corporação Musical São Sebastião exerce um papel central na vida cultural e social de Macuco de Minas e das comunidades vizinhas, atuando como um importante agente de preservação das tradições musicais do interior mineiro. Inserida no contexto histórico das bandas civis de música — instituições profundamente enraizadas na cultura de Minas Gerais — a Corporação mantém viva uma tradição que atravessa gerações, conectando memória, identidade e participação comunitária.\n\nSua atuação está presente nos principais momentos da vida coletiva da comunidade. A banda participa de festas religiosas, procissões, alvoradas festivas e celebrações tradicionais, contribuindo para a atmosfera solene e festiva desses eventos. Também se destaca em manifestações culturais populares, como o carnaval local, quando percorre as ruas executando marchinhas e repertórios que reúnem moradores e visitantes em torno da música e da convivência comunitária.\n\nAlém de sua presença nas festividades tradicionais, a Corporação Musical São Sebastião promove iniciativas que fortalecem o intercâmbio cultural e a valorização da música instrumental. Entre essas ações destaca-se o Encontro de Bandas de Macuco de Minas, evento que reúne grupos musicais de diversas cidades da região, criando um espaço de convivência artística, troca de experiências e valorização do repertório das bandas de música brasileiras.\n\nA atuação da banda também possui um forte caráter social. Por meio de projetos de formação e musicalização, a instituição oferece oportunidades de aprendizado e desenvolvimento para crianças e jovens, contribuindo para a formação cultural e cidadã da comunidade. Muitos músicos que hoje integram a corporação iniciaram sua trajetória nesses projetos, evidenciando o impacto duradouro da música na vida local.\n\nDessa forma, mais do que um grupo musical, a Corporação Musical São Sebastião representa um patrimônio cultural vivo, que fortalece os laços comunitários, inspira novas gerações e reafirma a importância da música como expressão coletiva e elemento fundamental da identidade cultural de Macuco de Minas e do sul de Minas Gerais.",
     "image": {
-      "src": "/images/quem-somos/cultural.jpg",
+      "src": "/images/quem/cultural.jpg",
       "alt": "Imagem da atuação cultural e social",
       "width": 1200,
       "height": 800
@@ -64,37 +64,37 @@
     "title": "Galeria",
     "items": [
       {
-        "src": "/images/quem-somos/1.jpg",
+        "src": "/images/quem/1.jpg",
         "alt": "Foto 1",
         "width": 1200,
         "height": 800
       },
       {
-        "src": "/images/quem-somos/2.jpg",
+        "src": "/images/quem/2.jpg",
         "alt": "Foto 2",
         "width": 1200,
         "height": 800
       },
       {
-        "src": "/images/quem-somos/3.jpg",
+        "src": "/images/quem/3.jpg",
         "alt": "Foto 3",
         "width": 1200,
         "height": 800
       },
       {
-        "src": "/images/quem-somos/4.jpg",
+        "src": "/images/quem/4.jpg",
         "alt": "Foto 4",
         "width": 1200,
         "height": 800
       },
       {
-        "src": "/images/quem-somos/5.jpg",
+        "src": "/images/quem/5.jpg",
         "alt": "Foto 5",
         "width": 1200,
         "height": 800
       },
       {
-        "src": "/images/quem-somos/6.jpg",
+        "src": "/images/quem/6.jpg",
         "alt": "Foto 6",
         "width": 1200,
         "height": 800
