@@ -1,22 +1,46 @@
 {
   "hero": {
     "title": "Contato",
-    "subtitle": "Fale com a gente",
+    "subtitle": "Entre em contato com a banda e saiba mais sobre nossos projetos.",
     "image": {
-      "src": "/images/example.jpg",
-      "alt": "Descrição",
-      "width": 1200,
-      "height": 800
-    }
+      "src": "/images/contato/hero.jpg",
+      "alt": "Imagem da página de contato",
+      "width": 1600,
+      "height": 900
+    },
+    "forceGoldTitle": true
   },
-  "sections": [
-    {
-      "title": "Informações",
-      "items": [
-        "Endereço: Macuco de Minas",
-        "Telefone: (00) 00000-0000",
-        "Email: contato@cmss.org"
-      ]
+  "contactSection": {
+    "infoTitle": "Contato",
+    "infoItems": [
+      {
+        "label": "Endereço",
+        "value": "Rua Maestro Carlos Gomes, 123 - Centro",
+        "secondaryValue": "Macuco de Minas - MG",
+        "type": "address"
+      },
+      {
+        "label": "Telefone",
+        "value": "(35) 99999-9999",
+        "type": "phone"
+      },
+      {
+        "label": "Email",
+        "value": "contato@cmss.org.br",
+        "type": "email"
+      }
+    ],
+    "formLabels": {
+      "title": "Envie sua mensagem",
+      "description": "Preencha o formulário abaixo para falar com a Corporação Musical São Sebastião.",
+      "nameLabel": "Nome",
+      "namePlaceholder": "Seu nome completo",
+      "emailLabel": "Email",
+      "emailPlaceholder": "voce@email.com",
+      "messageLabel": "Mensagem",
+      "messagePlaceholder": "Digite sua mensagem aqui...",
+      "ctaLabel": "Envio em breve",
+      "disabledNote": "O envio do formulário será habilitado em breve."
     }
-  ]
+  }
 }
