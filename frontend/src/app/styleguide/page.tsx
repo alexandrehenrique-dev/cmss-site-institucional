@@ -10,6 +10,7 @@ import type { GalleryItem } from "@/types/content";
 import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
 import { SupportCards } from "@/components/support/SupportCards";
 import { ContactInfo } from "@/components/contact/ContactInfo";
+import { ContactSection } from "@/components/contact/ContactSection";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -125,6 +126,20 @@ const contactInfoMock = [
   },
 ];
 
+const contactFormMock = {
+  title: "Envie sua mensagem",
+  description:
+    "Preencha o formulário abaixo para falar com a Corporação Musical São Sebastião.",
+  nameLabel: "Nome",
+  namePlaceholder: "Seu nome completo",
+  emailLabel: "Email",
+  emailPlaceholder: "voce@email.com",
+  messageLabel: "Mensagem",
+  messagePlaceholder: "Digite sua mensagem aqui...",
+  ctaLabel: "Envio em breve",
+  disabledNote: "O envio do formulário será habilitado em breve.",
+};
+
 export default function StyleguidePage() {
   const items8 = makeItems(8);
 
@@ -226,6 +241,13 @@ export default function StyleguidePage() {
       <Section title="Contato">
         <ContactInfo
           items={contactInfoMock}
+        />
+      </Section>
+      <Section title="ContactSection">
+        <ContactSection
+          infoTitle="Contato"
+          infoItems={contactInfoMock}
+          formLabels={contactFormMock}
         />
       </Section>
     </main>
