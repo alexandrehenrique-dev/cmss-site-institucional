@@ -1,22 +1,44 @@
 {
   "hero": {
     "title": "Apoie a Banda",
-    "subtitle": "Ajude a manter a tradição viva",
+    "subtitle": "Ajude a manter viva a tradição musical da nossa comunidade.",
+    "image": {
+      "src": "/images/apoie/hero.jpg",
+      "alt": "Imagem de apoio à banda",
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "whySupport": {
+    "title": "Por que apoiar",
+    "text": "A Corporação Musical São Sebastião é uma instituição cultural sem fins lucrativos, construída ao longo das décadas pelo esforço coletivo de músicos, voluntários e pela própria comunidade. Sua missão sempre foi levar música, cultura e formação artística à população de Macuco de Minas e região, mantendo viva uma tradição que atravessa gerações e faz parte da identidade cultural do interior de Minas Gerais.\n\nMais do que uma banda, a Corporação também desenvolve projetos de formação musical que oferecem acesso gratuito ao aprendizado da música, especialmente para crianças e jovens da comunidade. Entre essas iniciativas destaca-se o Projeto de Musicalização Infantil, que abre portas para que novas gerações tenham contato com a música, desenvolvendo sensibilidade artística, disciplina, convivência social e cidadania. Para muitas dessas crianças, esse é o primeiro contato com a educação musical e com um ambiente cultural enriquecedor.\n\nEntretanto, manter essas atividades não é uma tarefa simples. A instituição não dispõe de muitos recursos próprios e depende, em grande parte, do apoio do poder público, de empresas parceiras e da contribuição da própria comunidade para continuar existindo. Instrumentos, manutenção de equipamentos, materiais didáticos e a estrutura necessária para os ensaios e aulas representam desafios constantes para uma organização que oferece um serviço cultural e educacional totalmente gratuito.\n\nApoiar a Corporação Musical São Sebastião é contribuir diretamente para a continuidade de um projeto cultural e social que pertence à comunidade. Cada apoio recebido ajuda a garantir que a música continue transformando vidas, formando novos músicos e mantendo viva uma tradição que há décadas inspira Macuco de Minas e toda a região.",
     "image": {
       "src": "/images/example.jpg",
-      "alt": "Descrição",
+      "alt": "Imagem institucional sobre apoio",
       "width": 1200,
       "height": 800
     }
   },
-  "sections": [
-    {
-      "title": "Como Ajudar",
-      "items": [
-        "Apoio financeiro",
-        "Doação de instrumentos",
-        "Parcerias institucionais"
-      ]
-    }
-  ]
+  "supportCards": {
+    "title": "Formas de apoio",
+    "items": [
+      {
+        "title": "Apoio Financeiro",
+        "icon": "financial",
+        "text": "Contribua com o Pix Solidário e ajude a manter viva a formação musical, a manutenção dos instrumentos e as atividades culturais da instituição.",
+        "copyLabel": "Chave Pix",
+        "copyValue": "pix@cmss.org.br"
+      },
+      {
+        "title": "Apoio Institucional",
+        "icon": "institutional",
+        "text": "Empresas e parceiros podem apoiar a instituição por meio de alianças culturais, patrocínios, ações conjuntas e fortalecimento de projetos de impacto social e artístico."
+      },
+      {
+        "title": "Doação de Materiais e Instrumentos",
+        "icon": "materials",
+        "text": "Aceitamos doações de instrumentos, acessórios, estantes, partituras e materiais que contribuam para o desenvolvimento das atividades musicais."
+      }
+    ]
+  }
 }
