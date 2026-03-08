@@ -8,6 +8,7 @@ import { EventCard } from "@/components/events/EventCard";
 import { EventList } from "@/components/events/EventList";
 import type { GalleryItem } from "@/types/content";
 import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
+import { SupportCards } from "@/components/support/SupportCards";
 
 function makeItems(count: number): GalleryItem[] {
   return Array.from({ length: count }).map((_, i) => ({
@@ -81,6 +82,26 @@ const styleguideEvents = [
     title: "Turnê Sudeste",
     date: "2026-05-30",
     location: "São Paulo",
+  },
+];
+
+const supportItems = [
+  {
+    title: "Apoio Financeiro",
+    icon: "financial" as const,
+    text: "Contribua com o Pix Solidário e ajude a manter viva a formação musical, a manutenção dos instrumentos e as atividades culturais da instituição.",
+    copyLabel: "Chave Pix",
+    copyValue: "pix@cmss.org.br",
+  },
+  {
+    title: "Apoio Institucional",
+    icon: "institutional" as const,
+    text: "Empresas e parceiros podem apoiar a instituição por meio de alianças culturais, patrocínios, ações conjuntas e fortalecimento de projetos de impacto social e artístico.",
+  },
+  {
+    title: "Doação de Materiais e Instrumentos",
+    icon: "materials" as const,
+    text: "Aceitamos doações de instrumentos, acessórios, estantes, partituras e materiais que contribuam para o desenvolvimento das atividades musicais.",
   },
 ];
 
@@ -172,10 +193,16 @@ export default function StyleguidePage() {
           />
         </div>
       </Section>
-      <Section title="InstitutionalCards">
+      <Section>
         <InstitutionalCards
           title="Quem Somos"
           items={institutionalItems}
+        />
+      </Section>
+      <Section>
+        <SupportCards
+          title="Formas de Apoio"
+          items={supportItems}
         />
       </Section>
     </main>
