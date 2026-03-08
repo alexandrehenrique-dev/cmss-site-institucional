@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NavbarTitle } from "@/types/content";
+import { Heading } from "../Typography";
 
 export type BrandLockupProps = {
   title: NavbarTitle;
@@ -44,28 +45,19 @@ export function BrandLockup({ title, logoSrc, className = "" }: BrandLockupProps
       )}
 
       <div className="flex flex-col leading-none">
-        <span
+        <Heading
+          variant="h3"
           className="block text-[var(--accent)]"
-          style={{
-            fontFamily: "var(--font-heading)",
-            // controla tamanho de verdade (mobile -> desktop)
-            fontSize: "clamp(1.05rem, 2.2vw, 1.75rem)",
-            lineHeight: 1.05,
-          }}
         >
           {line1}
-        </span>
+        </Heading>
 
-        <span
+        <Heading
+          variant="h2"
           className="block text-[var(--primary)]"
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(1.35rem, 3.0vw, 2.25rem)",
-            lineHeight: 1.05,
-          }}
         >
           {line2}
-        </span>
+        </Heading>
       </div>
     </Link>
   );
