@@ -1,6 +1,6 @@
 "use client";
 
-import { Text } from "@/components/Typography";
+import { Text, Heading } from "@/components/Typography";
 import { SupportCardIcon, SupportIconName } from "./SupportCardIcon";
 import { SupportCopyField } from "./SupportCopyField";
 
@@ -37,9 +37,13 @@ export function SupportCard({
 
       <div className="flex min-h-0 flex-1 flex-col">
         <div className="flex flex-col gap-3">
-          <h3 className="institutional-card-title text-2xl md:text-3xl leading-tight break-words">
+          <Heading
+            as="h3"
+            variant="h2"
+            className="institutional-card-title"
+          >
             {title}
-          </h3>
+          </Heading>
 
           {hasText ? (
             <Text variant="body" className="m-0 text-[var(--fg)]">
