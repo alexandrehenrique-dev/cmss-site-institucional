@@ -1,8 +1,8 @@
 {
   "seo": {
     "title": "Corporação Musical São Sebastião",
-    "description": "Desde 1951, a Corporação Musical São Sebastião promove música, cultura e formação musical em Macuco de Minas, Itumirim. Conheça a banda.",
-    "siteUrl": "https://cmss-site-institucional.vercel.app",
+    "description": "Desde 1951, a Corporação Musical São Sebastião promove música, cultura e formação musical em Macuco de Minas. Conheça a banda.",
+    "siteUrl": "https://cmssmacuco.org",
     "shareImage": {
       "src": "/images/brand/social-card.jpg",
       "alt": "Corporação Musical São Sebastião — desde 1951 mantendo a tradição em Macuco de Minas",
@@ -15,7 +15,7 @@
         "São Sebastião"
       ],
       "tagline": "Desde 1951 mantendo a tradição.",
-      "location": "MACUCO DE MINAS · ITUMIRIM · MG",
+      "location": "MACUCO DE MINAS · MG",
       "image": "/images/home/hero.jpg"
     }
   },
