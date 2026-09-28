@@ -36,7 +36,13 @@ export type FooterContent = {
   copyrightText: string;
 };
 
+export type SeoContent = {
+  title: string;
+  description: string;
+};
+
 export type GlobalContent = {
+  seo: SeoContent;
   navbar: NavbarContent;
   footer: FooterContent;
 };
@@ -54,6 +60,7 @@ export type Section = {
 };
 
 export type PageContent = {
+  seo?: SeoContent;
   hero: Hero;
   sections?: Section[];
 };

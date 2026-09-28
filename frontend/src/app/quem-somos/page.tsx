@@ -5,7 +5,7 @@ import { ImageBlock } from "@/components/ImageBlock";
 import { SplitMediaText } from "@/components/layout/SplitMediaText";
 import { InstitutionalCards } from "@/components/institutional/InstitutionalCards";
 import { Gallery } from "@/components/gallery/Gallery";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type {
   GalleryItem,
   HeroContent,
@@ -24,6 +24,8 @@ type AboutPageContent = {
   };
   forceGoldTitle: boolean;
 };
+
+export const metadata = getPageMetadata("quem-somos");
 
 export default function QuemSomosPage() {
   const content = getPageContent("quem-somos") as AboutPageContent;

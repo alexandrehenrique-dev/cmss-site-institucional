@@ -4,7 +4,7 @@ import { Heading, Text } from "@/components/Typography";
 import { ImageBlock } from "@/components/ImageBlock";
 import { SplitMediaText } from "@/components/layout/SplitMediaText";
 import { SupportCards } from "@/components/support/SupportCards";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type {
   HeroContent,
   SplitMediaSection,
@@ -16,6 +16,8 @@ type SupportPageContent = {
   whySupport: SplitMediaSection;
   supportCards: SupportCardsContent;
 };
+
+export const metadata = getPageMetadata("apoie");
 
 export default function ApoiePage() {
   const content = getPageContent("apoie") as SupportPageContent;
