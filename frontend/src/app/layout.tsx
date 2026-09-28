@@ -1,10 +1,15 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
 import { getGlobalContent } from "@/services/contentService";
 import "./globals.css";
 
-export const metadata = {
+const { seo } = getGlobalContent();
+
+export const metadata: Metadata = {
+  title: { default: seo.title, template: `%s | ${seo.title}` },
+  description: seo.description,
   icons: {
     icon: [
       { url: "/favicon.ico" },

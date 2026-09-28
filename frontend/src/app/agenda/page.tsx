@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { EventList } from "@/components/events/EventList";
 import { Section } from "@/components/Section";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type { EventCardProps, HeroContent } from "@/types/content";
 
 type AgendaPageContent = {
@@ -11,6 +11,8 @@ type AgendaPageContent = {
     items: EventCardProps[];
   };
 };
+
+export const metadata = getPageMetadata("agenda");
 
 export default function AgendaPage() {
   const content = getPageContent("agenda") as AgendaPageContent;

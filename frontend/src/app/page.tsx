@@ -2,8 +2,10 @@ import { Ornament } from "@/components/Ornament";
 import { Hero } from "@/components/Hero";
 import { EventList } from "@/components/events/EventList";
 import { Section } from "@/components/Section";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type { HomePageContent } from "@/types/content";
+
+export const metadata = getPageMetadata("home");
 
 export default function HomePage() {
   const content = getPageContent("home") as HomePageContent;

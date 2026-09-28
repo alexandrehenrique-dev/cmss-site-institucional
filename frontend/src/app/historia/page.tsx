@@ -4,7 +4,7 @@ import { Heading, Text } from "@/components/Typography";
 import { ImageBlock } from "@/components/ImageBlock";
 import { SplitMediaText } from "@/components/layout/SplitMediaText";
 import { Gallery } from "@/components/gallery/Gallery";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type {
   GalleryItem,
   GalleryVariant,
@@ -22,6 +22,8 @@ type HistoryPageContent = {
     items: GalleryItem[];
   };
 };
+
+export const metadata = getPageMetadata("historia");
 
 export default function HistoriaPage() {
   const content = getPageContent("historia") as HistoryPageContent;

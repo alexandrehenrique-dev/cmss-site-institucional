@@ -1,13 +1,15 @@
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { ContactSection } from "@/components/contact/ContactSection";
-import { getPageContent } from "@/services/contentService";
+import { getPageContent, getPageMetadata } from "@/services/contentService";
 import type { ContactSectionContent, HeroContent } from "@/types/content";
 
 type ContactPageContent = {
   hero: HeroContent;
   contactSection: ContactSectionContent;
 };
+
+export const metadata = getPageMetadata("contato");
 
 export default function ContatoPage() {
   const content = getPageContent("contato") as ContactPageContent;

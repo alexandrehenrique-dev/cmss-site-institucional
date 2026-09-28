@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { readContent } from '@/lib/readContent';
 import { GlobalContent, PageContent } from '@/types/content';
 
@@ -16,3 +17,11 @@ export async function getHomeContent() {
   return res.json();
 }
 */
+export function getPageMetadata(page: string): Metadata {
+  const content = getPageContent(page);
+  const title = content.seo?.title ?? content.hero.title;
+  return {
+    title: page === "home" ? { absolute: title } : title,
+    description: content.seo?.description ?? content.hero.subtitle,
+  };
+}
