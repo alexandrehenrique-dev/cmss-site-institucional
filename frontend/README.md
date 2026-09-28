@@ -189,3 +189,11 @@ Mesmo sendo um projeto pequeno, boas práticas são incentivadas:
 
 Feito com dedicação, cultura e música 🎺🎶  
 **Corporação Musical São Sebastião**
+
+## Compartilhamento e marca
+
+Os títulos, descrições, endereço público e imagem de compartilhamento ficam nos JSONs de conteúdo. Em `src/content/global.json`, `seo.siteUrl` define o domínio oficial; a variável de ambiente `SITE_URL` pode sobrescrevê-lo durante o build. Ao trocar de domínio, atualizar esse valor e publicar novamente para atualizar os links canônicos e Open Graph.
+
+A capa de compartilhamento é um JPEG público de 1200 × 630, usado com Open Graph e Twitter Cards. O título e a descrição são específicos de cada página. O arquivo estático não depende de JavaScript ou de um serviço externo para ser lido pelos robôs de compartilhamento.
+
+As versões vetoriais da marca ficam em `public/images/brand`: `emblem.svg` é o selo completo e `mark.svg` é a lira simplificada para o cabeçalho e ícones. A logo original permanece em `public/images/logo.png`. Após editar os vetores ou os textos de `seo.shareCard`, execute `npm run brand:generate` para atualizar a capa, o PNG da marca e os favicons antes de publicar.

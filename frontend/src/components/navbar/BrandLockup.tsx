@@ -28,32 +28,14 @@ export function BrandLockup({ title, logoSrc, className = "" }: BrandLockupProps
     >
       {logoSrc ? (
         <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
-          <div
-            className={[
-              "absolute inset-0 rounded-full",
-              "bg-[radial-gradient(circle,rgba(211,175,55,0.28)_0%,rgba(211,175,55,0.14)_38%,transparent_72%)]",
-              "blur-[6px] scale-[1.18]",
-              "pointer-events-none",
-            ].join(" ")}
-            aria-hidden="true"
+          <Image
+            src={logoSrc}
+            alt={`${line1} ${line2}`}
+            fill
+            className="object-contain"
+            sizes="48px"
+            priority
           />
-
-          <div
-            className={[
-              "relative h-full w-full rounded-full overflow-hidden",
-              "bg-transparent",
-              "shadow-[0_4px_14px_rgba(0,0,0,0.18)]",
-            ].join(" ")}
-          >
-            <Image
-              src={logoSrc}
-              alt="Logo"
-              fill
-              className="object-cover"
-              sizes="56px"
-              priority
-            />
-          </div>
         </div>
       ) : (
         <div

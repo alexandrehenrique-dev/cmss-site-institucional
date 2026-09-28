@@ -17,11 +17,28 @@ export async function getHomeContent() {
   return res.json();
 }
 */
+export function getSiteUrl(): URL {
+  return new URL(process.env.SITE_URL || getGlobalContent().seo.siteUrl);
+}
+
 export function getPageMetadata(page: string): Metadata {
   const content = getPageContent(page);
+  const { seo } = getGlobalContent();
   const title = content.seo?.title ?? content.hero.title;
+  const description = content.seo?.description ?? content.hero.subtitle;
+  const shareTitle = page === "home" ? title : `${title} | ${seo.title}`;
+  const url = new URL(page === "home" ? "/" : `/${page}`, getSiteUrl());
+  const image = { url: new URL(seo.shareImage.src, getSiteUrl()).href,
+    width: seo.shareImage.width, height: seo.shareImage.height,
+    alt: seo.shareImage.alt, type: "image/jpeg" };
   return {
     title: page === "home" ? { absolute: title } : title,
-    description: content.seo?.description ?? content.hero.subtitle,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website", locale: "pt_BR", siteName: seo.title,
+      title: shareTitle, description, url, images: [image],
+    },
+    twitter: { card: "summary_large_image", title: shareTitle, description, images: [image] },
   };
 }
