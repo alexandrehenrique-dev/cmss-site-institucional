@@ -21,13 +21,9 @@ export function CmsImage({
 }: CmsImageProps) {
   const [loaded, setLoaded] = useState(false);
 
-  const ratio =
-    width > 0 && height > 0 ? `${width} / ${height}` : undefined;
-
   return (
     <div
       className="group relative w-full overflow-hidden"
-      style={ratio ? { aspectRatio: ratio } : undefined}
     >
       {!loaded ? (
         <Skeleton className="absolute inset-0 h-full w-full rounded-none" />
@@ -39,11 +35,11 @@ export function CmsImage({
         width={width}
         height={height}
         onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
         className={[
           "h-auto w-full",
           "transition-[opacity,transform] duration-[var(--motion-duration-slow)] ease-[var(--motion-ease-soft)]",
           loaded ? "opacity-100" : "opacity-0",
-          "group-hover:scale-[var(--image-hover-scale)]",
           className,
         ].join(" ")}
       />

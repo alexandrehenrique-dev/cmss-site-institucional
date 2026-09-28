@@ -27,7 +27,7 @@ export function InstitutionalCard({
     <>
       <article
         className={[
-          "flex h-full max-h-[320px] w-full max-w-[360px] flex-col",
+          "flex h-full w-full max-w-[360px] flex-col",
           "gap-4",
           className,
         ].join(" ")}

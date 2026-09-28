@@ -6,10 +6,11 @@ export function EventListHeader({
   title: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4">
+    <div className="event-heading flex items-center justify-between gap-4">
       <Heading as="h2" variant="h2">
         {title}
       </Heading>
+      <span className="engraved-rule" aria-hidden="true" />
     </div>
   );
 }

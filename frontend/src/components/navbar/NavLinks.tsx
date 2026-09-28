@@ -19,10 +19,10 @@ export function NavLinks({
   const layout =
     orientation === "vertical"
       ? "flex flex-col items-start"
-      : "flex flex-row items-center flex-wrap justify-end";
+      : "flex flex-row items-center justify-end";
 
   return (
-    <div className={[layout, "gap-10", className].join(" ")}>
+    <div className={[layout, "gap-6 xl:gap-8", className].join(" ")}>
       {links.map((link) => (
         <NavItem
           key={link.href}

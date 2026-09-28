@@ -7,251 +7,85 @@
 
 /* Tailwind v4 */
 @import "tailwindcss";
+@import "../styles/heritage.css";
 
 /* Tipografia: só fontes aqui */
-:root {
+@theme {
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "Montserrat", ui-sans-serif, system-ui, -apple-system, Segoe UI,
     Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* BODY usa tokens (bg/fg), não inventa outro par */
 body {
   position: relative;
   font-family: var(--font-body);
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--fg);
   line-height: var(--leading-normal);
 }
-
-/* camada sutil de “papel envelhecido” */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-
-    /* vignette cinematográfico */
-    radial-gradient(
-      ellipse at center,
-      rgba(0,0,0,0) 55%,
-      rgba(0,0,0,0.06) 100%
-    ),
-
-    /* base quente de papel */
-    linear-gradient(
-      180deg,
-      rgba(214, 194, 150, 0.030) 0%,
-      rgba(214, 194, 150, 0.015) 60%,
-      rgba(214, 194, 150, 0.020) 100%
-    ),
-
-    /* iluminação dourada suave */
-    radial-gradient(
-      circle at 18% 22%,
-      rgba(211, 175, 55, 0.10) 0%,
-      transparent 42%
-    ),
-
-    /* leve calor vermelho profundo */
-    radial-gradient(
-      circle at 82% 18%,
-      rgba(177, 0, 0, 0.07) 0%,
-      transparent 38%
-    ),
-
-    /* mancha orgânica inferior */
-    radial-gradient(
-      circle at 28% 82%,
-      rgba(211, 175, 55, 0.07) 0%,
-      transparent 40%
-    ),
-
-    /* segunda iluminação suave */
-    radial-gradient(
-      circle at 85% 78%,
-      rgba(177, 0, 0, 0.05) 0%,
-      transparent 36%
-    ),
-
-    /* micro textura horizontal */
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.012) 0px,
-      rgba(255,255,255,0.012) 1px,
-      transparent 2px,
-      transparent 12px
-    ),
-
-    /* micro textura vertical */
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.010) 0px,
-      rgba(0,0,0,0.010) 1px,
-      transparent 2px,
-      transparent 14px
-    );
-
-  filter: contrast(102%) brightness(101%);
-}
-
-/* Headings em serifada */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: var(--leading-tight);
-  letter-spacing: 0.01em;
+  letter-spacing: .01em;
+  text-wrap: balance;
 }
-
-/* Hero title treatment — LIGHT theme */
-header .institutional-card-title {
-  /* remove heavy drop shadow used in component */
-  filter: none;
-
-  /* subtle gold glow so the title pops on light images */
-  text-shadow:
-    0 0 12px rgba(211,175,55,0.35),
-    0 0 22px rgba(211,175,55,0.18);
+main, footer { position: relative; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled), .image-trigger { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+dialog { border: none; padding: 0; }
+dialog[open]::backdrop { background: var(--overlay); }
+.gallery-frame { overflow: hidden; background: var(--surface-2); }
+.gallery-frame figure, .gallery-frame .image-trigger, .gallery-frame .image-trigger > div {
+  width: 100%; height: 100%;
 }
-
-/* Keep original darker cinematic look in DARK theme */
-@media (prefers-color-scheme: dark) {
-  header .institutional-card-title {
-    text-shadow:
-      0 2px 6px rgba(0,0,0,0.65),
-      0 0 14px rgba(211,175,55,0.35);
+.gallery-frame img { width: 100%; height: 100%; object-fit: contain; }
+.image-viewer {
+  margin: auto;
+  width: min(94vw, 1100px);
+  max-width: none;
+  max-height: 92dvh;
+  overflow: auto;
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: 0 24px 80px #0005;
+}
+.image-viewer[open] { display: flex; flex-direction: column; }
+.image-viewer::backdrop { background: rgba(8, 9, 11, .85); }
+.image-viewer-heading {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: .65rem 1rem; flex: none;
+  border-bottom: 1px solid var(--border);
+}
+.image-viewer-heading p { margin: 0; font-size: .875rem; }
+.image-viewer-heading button {
+  display: grid; place-items: center; width: 44px; height: 44px; flex: none;
+  border-radius: 6px;
+}
+.image-viewer-media { min-height: 0; padding: 12px; }
+.image-viewer-media img {
+  display: block; width: 100%; height: auto; max-height: 72dvh;
+  object-fit: contain;
+}
+.image-viewer-description { padding: 0 1rem 1rem; margin: 0; font-size: .875rem; }
+@media (max-height: 500px) {
+  .image-viewer-media img { max-height: 60dvh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-
-/* Dialog modal */
-dialog {
-  border: none;
-  padding: 0;
+.mobile-drawer {
+  position: fixed; inset: 0 0 0 auto; margin: 0;
+  width: min(88vw, 360px); height: 100dvh; max-height: none;
+  padding: 24px; color: var(--fg); background: var(--bg);
+  border-left: 1px solid var(--gold-border);
 }
-
-/* Backdrop do <dialog> */
-dialog[open]::backdrop {
-  background: var(--overlay);
-}
-
-.hero-aged-overlay {
-  background:
-    radial-gradient(
-      circle at 18% 22%,
-      rgba(177, 0, 0, 0.22) 0%,
-      transparent 42%
-    ),
-    radial-gradient(
-      circle at 82% 18%,
-      rgba(177, 0, 0, 0.14) 0%,
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 28% 82%,
-      rgba(177, 0, 0, 0.12) 0%,
-      transparent 40%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.018) 0px,
-      rgba(255,255,255,0.018) 1px,
-      transparent 2px,
-      transparent 12px
-    );
-  mix-blend-mode: screen;
-  opacity: 0.24;
-}
-
-.hero-edge-blend {
-  background:
-    radial-gradient(
-      circle at 0% 0%,
-      rgba(246, 241, 225, 0.42) 0%,
-      rgba(246, 241, 225, 0.18) 16%,
-      rgba(246, 241, 225, 0.08) 34%,
-      rgba(246, 241, 225, 0) 68%
-    ),
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(246, 241, 225, 0.42) 0%,
-      rgba(246, 241, 225, 0.18) 16%,
-      rgba(246, 241, 225, 0.08) 34%,
-      rgba(246, 241, 225, 0) 68%
-    ),
-    radial-gradient(
-      circle at 0% 100%,
-      rgba(246, 241, 225, 0.28) 0%,
-      rgba(246, 241, 225, 0.14) 16%,
-      rgba(246, 241, 225, 0.06) 34%,
-      rgba(246, 241, 225, 0) 68%
-    ),
-    radial-gradient(
-      circle at 100% 100%,
-      rgba(246, 241, 225, 0.28) 0%,
-      rgba(246, 241, 225, 0.14) 16%,
-      rgba(246, 241, 225, 0.06) 34%,
-      rgba(246, 241, 225, 0) 68%
-    );
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero-aged-overlay {
-    background:
-      radial-gradient(
-        circle at 18% 22%,
-        rgba(211, 175, 55, 0.18) 0%,
-        transparent 42%
-      ),
-      radial-gradient(
-        circle at 82% 18%,
-        rgba(211, 175, 55, 0.12) 0%,
-        transparent 38%
-      ),
-      radial-gradient(
-        circle at 28% 82%,
-        rgba(211, 175, 55, 0.10) 0%,
-        transparent 40%
-      ),
-      repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,0.014) 0px,
-        rgba(255,255,255,0.014) 1px,
-        transparent 2px,
-        transparent 12px
-      );
-    opacity: 0.22;
-  }
-  .hero-edge-blend {
-    background:
-      radial-gradient(
-        circle at 0% 0%,
-        rgba(20, 21, 24, 0.60) 0%,
-        rgba(20, 21, 24, 0.28) 16%,
-        rgba(20, 21, 24, 0.14) 34%,
-        rgba(20, 21, 24, 0) 68%
-      ),
-      radial-gradient(
-        circle at 100% 0%,
-        rgba(20, 21, 24, 0.60) 0%,
-        rgba(20, 21, 24, 0.28) 16%,
-        rgba(20, 21, 24, 0.14) 34%,
-        rgba(20, 21, 24, 0) 68%
-      ),
-      radial-gradient(
-        circle at 0% 100%,
-        rgba(20, 21, 24, 0.44) 0%,
-        rgba(20, 21, 24, 0.24) 16%,
-        rgba(20, 21, 24, 0.12) 34%,
-        rgba(20, 21, 24, 0) 68%
-      ),
-      radial-gradient(
-        circle at 100% 100%,
-        rgba(20, 21, 24, 0.44) 0%,
-        rgba(20, 21, 24, 0.24) 16%,
-        rgba(20, 21, 24, 0.12) 34%,
-        rgba(20, 21, 24, 0) 68%
-      );
-  }
-}
+.mobile-drawer[open] { animation: drawer-appear 220ms ease-out; }
+@keyframes drawer-appear { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }

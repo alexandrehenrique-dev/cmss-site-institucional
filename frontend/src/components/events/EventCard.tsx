@@ -30,8 +30,8 @@ export function EventCard({
           "bg-[var(--bg)]",
           "px-4 py-3",
           "flex gap-4",
-          "h-[250px]",
-          "w-full max-w-[500px]",
+          "min-h-[220px]",
+          "w-full",
           className,
         ].join(" ")}
       >

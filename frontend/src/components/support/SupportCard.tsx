@@ -29,13 +29,13 @@ export function SupportCard({
   return (
     <article
       className={[
-        "flex h-[260px] w-full max-w-[360px] gap-4",
+        "flex min-h-[260px] w-full max-w-[360px] gap-4",
         className,
       ].join(" ")}
     >
       <SupportCardIcon name={icon} />
 
-      <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex flex-col gap-3">
           <Heading
             as="h3"
@@ -52,7 +52,7 @@ export function SupportCard({
           ) : null}
         </div>
 
-        <div className="mt-auto">
+        <div className="mt-auto pt-5">
           {hasCopy ? (
             <SupportCopyField
               label={copyLabel ? copyLabel : ""}

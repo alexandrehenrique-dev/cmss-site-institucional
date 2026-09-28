@@ -15,6 +15,7 @@ export function useGallerySwipe({
   const startXRef = useRef(0);
   const startYRef = useRef(0);
   const activeRef = useRef(false);
+  const suppressUntilRef = useRef(0);
 
   const [dragging, setDragging] = useState(false);
   const [dragX, setDragX] = useState(0);
@@ -81,6 +82,7 @@ export function useGallerySwipe({
     const w = Math.max(1, (e.currentTarget as HTMLElement).clientWidth || 360);
     const threshold = Math.max(50, Math.min(120, w * 0.18));
 
+    suppressUntilRef.current = Date.now() + 350;
     reset();
 
     if (dx > threshold) onPrev();
@@ -88,6 +90,7 @@ export function useGallerySwipe({
   }
 
   return {
+    suppressClick: () => Date.now() < suppressUntilRef.current,
     dragging,
     dragX,
     dragPct,
@@ -95,7 +98,7 @@ export function useGallerySwipe({
       onPointerDown,
       onPointerMove,
       onPointerUp,
-      onPointerCancel: onPointerUp,
+      onPointerCancel: reset,
     },
   };
 }

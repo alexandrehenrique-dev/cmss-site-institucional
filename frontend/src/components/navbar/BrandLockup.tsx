@@ -18,7 +18,7 @@ export function BrandLockup({ title, logoSrc, className = "" }: BrandLockupProps
       href="/"
       aria-label="Ir para a página inicial"
       className={[
-        "inline-flex items-center gap-3 rounded-md",
+        "inline-flex min-w-0 items-center gap-2.5 rounded-md",
         "!no-underline hover:!no-underline focus:!no-underline active:!no-underline visited:!no-underline",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]",
         "opacity-90 transition-opacity duration-150 hover:opacity-100",
@@ -27,7 +27,7 @@ export function BrandLockup({ title, logoSrc, className = "" }: BrandLockupProps
       style={{ textDecoration: "none" }}
     >
       {logoSrc ? (
-        <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+        <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
           <div
             className={[
               "absolute inset-0 rounded-full",
@@ -64,15 +64,17 @@ export function BrandLockup({ title, logoSrc, className = "" }: BrandLockupProps
 
       <div className="flex flex-col leading-none">
         <Heading
+          as="span"
           variant="h3"
-          className="block text-[var(--accent)]"
+          className="block !text-[clamp(0.85rem,2vw,1rem)] text-[var(--muted)]"
         >
           {line1}
         </Heading>
 
         <Heading
+          as="span"
           variant="h2"
-          className="block text-[var(--primary)]"
+          className="block !text-[clamp(1.4rem,3vw,1.8rem)] institutional-card-title"
         >
           {line2}
         </Heading>
