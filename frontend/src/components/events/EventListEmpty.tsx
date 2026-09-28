@@ -6,7 +6,7 @@ export function EventListEmpty({
   message: string;
 }) {
   return (
-    <div className="flex min-h-[250px] items-center justify-center border-t border-b border-[var(--gold-border)]">
+    <div className="event-empty flex min-h-[140px] items-center justify-center border-t border-b border-[var(--gold-border)]">
       <Text variant="muted" className="text-center">
         {message}
       </Text>

@@ -47,6 +47,7 @@ export type HeroContent = {
 export type HeroProps = {
   content: HeroContent;
   className?: string;
+  secondary?: boolean;
 };
 
 function clamp01(n: number) {
@@ -54,7 +55,7 @@ function clamp01(n: number) {
   return Math.max(0, Math.min(1, n));
 }
 
-export function Hero({ content, className = "" }: HeroProps) {
+export function Hero({ content, className = "", secondary = false }: HeroProps) {
   const { title, subtitle, image, cta, overlay, forceGoldTitle = false } = content;
   if (!title) return null;
 
@@ -67,16 +68,16 @@ export function Hero({ content, className = "" }: HeroProps) {
   const useGradient = gradient?.type !== "none";
 
   return (
-    <header
+    <section
       className={[
-        "relative w-full overflow-hidden",
-        "min-h-[420px] md:min-h-[520px] lg:min-h-[800px]",
+        "hero relative w-full overflow-hidden",
+        secondary ? "hero-secondary" : "hero-primary",
         "bg-[var(--bg)]",
         className,
       ].join(" ")}
     >
       {hasImage ? (
-        <div className="absolute inset-0">
+        <div className="hero-media absolute inset-0">
           <Image
             src={image!.src}
             alt={image!.alt}
@@ -91,7 +92,7 @@ export function Hero({ content, className = "" }: HeroProps) {
           />
 
           <div
-            className="absolute inset-0"
+            className="hero-dim absolute inset-0"
             style={{ background: `rgba(0,0,0,${dim})` }}
           />
 
@@ -106,16 +107,17 @@ export function Hero({ content, className = "" }: HeroProps) {
       <Container>
         <div
           className={[
-            "relative z-10 flex flex-col items-center justify-center text-center",
-            "min-h-[420px] md:min-h-[520px] lg:min-h-[800px]",
+            "hero-layout relative z-10 flex flex-col items-center justify-center text-center",
+            secondary ? "hero-secondary" : "hero-primary",
           ].join(" ")}
         >
-          <div className="w-full max-w-3xl pb-14 pt-20 md:pb-20 md:pt-28 lg:pb-24 lg:pt-36">
-            <div className="flex flex-col gap-5">
+          <div className="hero-copy w-full max-w-4xl py-16 md:py-20">
+            <div className="hero-copy-inner flex flex-col gap-5">
               <Heading
+                as={secondary ? "h2" : "h1"}
                 variant="h1"
                 className={[
-                  forceGoldTitle ? "text-[var(--accent)]" : "institutional-card-title",
+                  hasImage || forceGoldTitle ? "hero-heading" : "institutional-card-title",
                   "[text-shadow:0_0_12px_rgba(211,175,55,0.35),0_0_22px_rgba(211,175,55,0.18)]",
                   "dark:drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]",
                   "dark:[text-shadow:0_1px_0_rgba(255,255,255,0.04),0_0_12px_rgba(211,175,55,0.22)]",
@@ -134,7 +136,7 @@ export function Hero({ content, className = "" }: HeroProps) {
               ) : null}
 
               {cta?.label ? (
-                <div className="flex justify-center pt-4">
+                <div className="hero-action flex justify-center pt-4">
                   <CTAButton
                     label={cta.label}
                     variant={cta.variant ?? "primary"}
@@ -150,6 +152,6 @@ export function Hero({ content, className = "" }: HeroProps) {
           </div>
         </div>
       </Container>
-    </header>
+    </section>
   );
 }

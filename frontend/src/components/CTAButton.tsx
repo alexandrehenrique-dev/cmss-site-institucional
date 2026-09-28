@@ -18,7 +18,7 @@ function getVariantClass(variant: CTAButtonVariant): string {
     case "primary":
       return [
         "border-transparent",
-        "bg-[var(--primary)] text-white",
+        "bg-[var(--primary)] text-white hover:text-white",
         "hover:opacity-95",
         "hover:shadow-[var(--shadow-interactive)]",
       ].join(" ");
@@ -42,7 +42,7 @@ function getVariantClass(variant: CTAButtonVariant): string {
     default:
       return [
         "border-transparent",
-        "bg-[var(--primary)] text-white",
+        "bg-[var(--primary)] text-white hover:text-white",
         "hover:opacity-95",
         "hover:shadow-[var(--shadow-interactive)]",
       ].join(" ");
@@ -58,8 +58,9 @@ export function CTAButton({
   ariaLabel,
 }: CTAButtonProps) {
   const baseClass = [
+    `cta cta-${variant}`,
     "inline-flex items-center justify-center gap-2",
-    "rounded-md border px-4 py-2 text-sm font-medium",
+    "min-h-11 rounded-md border px-6 py-2.5 text-sm font-medium no-underline hover:no-underline",
     "transition-[transform,box-shadow,color,background-color,border-color,opacity] duration-[var(--motion-duration-base)] ease-[var(--motion-ease-standard)]",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]",
     "disabled:cursor-not-allowed disabled:opacity-50",

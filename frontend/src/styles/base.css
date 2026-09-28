@@ -1,7 +1,6 @@
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
+@layer base {
+html { min-height: 100%; }
+body { min-height: 100vh; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -34,4 +33,5 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
 }

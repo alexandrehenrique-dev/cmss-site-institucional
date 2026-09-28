@@ -31,8 +31,8 @@ export function Navbar({
       <nav
         aria-label="Navegação principal"
         className={[
-          "top-0 left-0 right-0 z-50 w-full",
-          "border-b-[3px] border-[var(--accent)]",
+          "site-nav top-0 left-0 right-0 z-50 w-full",
+          "border-b border-[var(--accent)]",
           "text-[var(--fg)]",
           "supports-[backdrop-filter]:bg-[var(--glass-bg)]",
           "supports-[backdrop-filter]:backdrop-blur-[var(--glass-backdrop-blur)]",
@@ -49,11 +49,11 @@ export function Navbar({
               {...(content.logoSrc ? { logoSrc: content.logoSrc } : {})}
             />
 
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <NavLinks links={content.links} orientation="horizontal" />
             </div>
 
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <MobileMenuButton
                 isOpen={open}
                 onClick={() => setOpen(true)}

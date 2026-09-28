@@ -12,13 +12,13 @@ export function Footer({ content }: { content: FooterContent }) {
   return (
     <footer
       className={[
-        "w-full mt-auto",
+        "site-footer w-full mt-auto",
         "bg-[var(--bg-footer)] text-[var(--paper-200)]",
         "border-t-[3px] border-[var(--primary)]",
       ].join(" ")}
     >
       <Container>
-        <div className="py-10 flex flex-col items-center text-center gap-6">
+        <div className="footer-content py-10 flex flex-col items-center text-center gap-6">
           <FooterTradition
             foundedYear={content.foundedYear}
             traditionText={content.traditionText}

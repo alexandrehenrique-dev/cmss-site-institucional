@@ -23,7 +23,7 @@ export function NavItem({
       href={href}
       {...(handleClick ? { onClick: handleClick } : {})}
       className={[
-        "inline-flex items-center rounded-md px-2 py-2 text-sm",
+        "nav-link inline-flex items-center rounded-md px-2 py-2 text-sm",
         "institutional-card-title",
         "transition-[transform,color,text-shadow,opacity,background-color] duration-[var(--motion-duration-base)] ease-[var(--motion-ease-standard)]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]",

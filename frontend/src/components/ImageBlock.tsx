@@ -1,147 +1,39 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import { useState } from "react";
 import { CmsImage } from "@/components/CmsImage";
+import { GalleryModal } from "@/components/gallery/GalleryModal";
 import { Text } from "@/components/Typography";
-import { X } from "lucide-react";
 
 export type ImageBlockProps = {
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  image: { src: string; alt: string; width: number; height: number };
   caption?: string;
   text?: string;
   className?: string;
   enableModal?: boolean;
 };
 
-export function ImageBlock({
-  image,
-  caption,
-  text,
-  className = "",
-  enableModal = true,
-}: ImageBlockProps) {
-  const isValid = Boolean(image?.src && image?.alt && image?.width && image?.height);
-
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const dialogId = useId();
-
-  useEffect(() => {
-    if (!enableModal) return;
-
-    const el = dialogRef.current;
-    if (!el) return;
-
-    const onClose = () => {};
-    el.addEventListener("close", onClose);
-    return () => el.removeEventListener("close", onClose);
-  }, [enableModal]);
-
-  if (!isValid) return null;
-
-  function openModal() {
-    if (!enableModal) return;
-    const el = dialogRef.current;
-    if (!el) return;
-
-    if (typeof el.showModal === "function") el.showModal();
-  }
-
-  function closeModal() {
-    const el = dialogRef.current;
-    if (!el) return;
-
-    if (typeof el.close === "function") el.close();
-  }
-
-  function onDialogClick(e: React.MouseEvent<HTMLDialogElement>) {
-    const el = dialogRef.current;
-    if (!el) return;
-
-    const rect = el.getBoundingClientRect();
-    const clickedInDialog =
-      e.clientX >= rect.left &&
-      e.clientX <= rect.right &&
-      e.clientY >= rect.top &&
-      e.clientY <= rect.bottom;
-
-    if (!clickedInDialog) closeModal();
-  }
-
+export function ImageBlock({ image, caption, text, className = "", enableModal = true }: ImageBlockProps) {
+  const [open, setOpen] = useState(false);
+  if (!image?.src || !image.alt || !image.width || !image.height) return null;
   return (
     <>
       <figure className={`flex flex-col gap-4 ${className}`}>
         {enableModal ? (
-          <button
-            type="button"
-            onClick={openModal}
-            className="text-left rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
-            aria-haspopup="dialog"
-            aria-controls={dialogId}
-            onPointerDown={(e) => e.stopPropagation()}
-          >
-            <CmsImage src={image.src} alt={image.alt} width={image.width} height={image.height} />
+          <button type="button" onClick={() => setOpen(true)}
+            className="image-trigger text-left rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+            aria-label={`Ampliar imagem: ${image.alt}`} aria-haspopup="dialog">
+            <CmsImage {...image} />
           </button>
-        ) : (
-          <CmsImage src={image.src} alt={image.alt} width={image.width} height={image.height} />
-        )}
-
-        {(caption || text) ? (
+        ) : <CmsImage {...image} />}
+        {(caption || text) && (
           <figcaption className="flex flex-col gap-2">
-            {caption ? (
-              <Text variant="small" className="italic opacity-80">
-                {caption}
-              </Text>
-            ) : null}
-            {text ? <Text variant="muted">{text}</Text> : null}
+            {caption && <Text variant="small" className="italic opacity-80">{caption}</Text>}
+            {text && <Text variant="muted">{text}</Text>}
           </figcaption>
-        ) : null}
+        )}
       </figure>
-
-      {enableModal ? (
-        <dialog
-          id={dialogId}
-          ref={dialogRef}
-          onPointerDown={(e) => e.stopPropagation()}
-          onClick={onDialogClick}
-          className="fixed inset-0 m-auto w-[min(92vw,900px)] max-h-[90vh] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg)] p-0 text-[var(--fg)]"
-          aria-label="Visualização de imagem"
-        >
-          <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] p-3">
-            <Text variant="small" className="opacity-80">
-              {caption ?? image.alt}
-            </Text>
-
-            <button
-              type="button"
-              onClick={closeModal}
-              className="rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
-              aria-label="Fechar"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-
-          <div className="max-h-[calc(90vh-64px)] overflow-y-auto p-3">
-            <CmsImage
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="max-h-[70vh] w-full object-contain"
-            />
-            {text ? (
-              <div className="mt-3">
-                <Text variant="muted">{text}</Text>
-              </div>
-            ) : null}
-          </div>
-        </dialog>
-      ) : null}
+      {open && <GalleryModal open item={{ ...image, ...(caption ? { caption } : {}), ...(text ? { description: text } : {}) }} onClose={() => setOpen(false)} />}
     </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Text } from "@/components/Typography";
 
 type BaseProps = {
@@ -32,12 +33,15 @@ export function ContactFormField(props: ContactFormFieldProps) {
     label,
     placeholder,
     value,
-    error,
+    error: validationError,
     required = false,
     disabled = false,
     className = "",
     onChange,
   } = props;
+
+  const [touched, setTouched] = useState(false);
+  const error = touched ? validationError : undefined;
 
   const commonClassName = [
     "w-full rounded-md border bg-[var(--surface-1)] text-[var(--fg)]",
@@ -71,6 +75,7 @@ export function ContactFormField(props: ContactFormFieldProps) {
           aria-invalid={error ? "true" : "false"}
           aria-describedby={error ? `${id}-error` : undefined}
           className={[commonClassName, "resize-y min-h-[140px]"].join(" ")}
+          onBlur={() => setTouched(true)}
           onChange={(e) => onChange(e.target.value)}
         />
       ) : (
@@ -85,6 +90,7 @@ export function ContactFormField(props: ContactFormFieldProps) {
           aria-invalid={error ? "true" : "false"}
           aria-describedby={error ? `${id}-error` : undefined}
           className={commonClassName}
+          onBlur={() => setTouched(true)}
           onChange={(e) => onChange(e.target.value)}
         />
       )}

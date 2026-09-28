@@ -18,7 +18,7 @@ export function FooterTradition({
   return (
     <Heading
       variant="h2"
-      className="text-[var(--paper-100)] text-2xl sm:text-3xl md:text-4xl"
+      className="footer-tradition text-[var(--paper-100)] text-2xl sm:text-3xl md:text-4xl"
     >
       <span
         className={[

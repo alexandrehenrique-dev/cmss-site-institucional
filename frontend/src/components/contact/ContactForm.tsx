@@ -105,7 +105,7 @@ export function ContactForm({
           label={content.nameLabel}
           placeholder={content.namePlaceholder}
           value={form.name}
-          error={errors.name ? errors.message : ""}
+          error={errors.name}
           required
           onChange={(value) => setForm((prev) => ({ ...prev, name: value }))}
         />
@@ -116,7 +116,7 @@ export function ContactForm({
           label={content.emailLabel}
           placeholder={content.emailPlaceholder}
           value={form.email}
-          error={errors.email ? errors.message : ""}
+          error={errors.email}
           required
           onChange={(value) => setForm((prev) => ({ ...prev, email: value }))}
         />

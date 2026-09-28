@@ -13,6 +13,8 @@ export function MobileMenuButton({
     <button
       type="button"
       onClick={onClick}
+      aria-expanded={isOpen}
+      aria-controls="cmss-mobile-drawer"
       aria-label={isOpen ? "Menu aberto" : "Abrir menu"}
       className={[
         "inline-flex h-11 w-11 items-center justify-center rounded-full",

@@ -1,3 +1,4 @@
+import { Ornament } from "@/components/Ornament";
 import { Hero } from "@/components/Hero";
 import { EventList } from "@/components/events/EventList";
 import { Section } from "@/components/Section";
@@ -8,10 +9,10 @@ export default function HomePage() {
   const content = getPageContent("home") as HomePageContent;
 
   return (
-    <>
-      <Hero content={content.hero} />
+    <div className="home-page">
+      <Hero content={content.hero} className="home-hero" />
 
-      <Section>
+      <Section className="home-events">
         <EventList
           title={content.events.title}
           items={content.events.items}
@@ -19,7 +20,10 @@ export default function HomePage() {
         />
       </Section>
 
-      <Hero content={content.secondaryHero} />
-    </>
+      <div className="home-about">
+        <Ornament />
+        <Hero content={content.secondaryHero} secondary />
+      </div>
+    </div>
   );
 }
