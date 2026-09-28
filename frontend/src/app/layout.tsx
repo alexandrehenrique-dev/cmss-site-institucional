@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
-import { getGlobalContent } from "@/services/contentService";
+import { getGlobalContent, getSiteUrl } from "@/services/contentService";
 import "./globals.css";
 
 const { seo } = getGlobalContent();
 
 export const metadata: Metadata = {
+  metadataBase: getSiteUrl(),
   title: { default: seo.title, template: `%s | ${seo.title}` },
   description: seo.description,
   icons: {

@@ -42,7 +42,11 @@ export type SeoContent = {
 };
 
 export type GlobalContent = {
-  seo: SeoContent;
+  seo: SeoContent & {
+    siteUrl: string;
+    shareImage: Image;
+    shareCard: { eyebrow: string; titleLines: string[]; tagline: string; location: string; image: string };
+  };
   navbar: NavbarContent;
   footer: FooterContent;
 };
